@@ -1,4 +1,4 @@
-﻿import cors from "cors";
+import cors from "cors";
 import express from "express";
 
 import { config } from "./config.js";
@@ -8,6 +8,7 @@ import {
   loadEventhubMetadata,
 } from "./eventhubMetadata.js";
 import { getRaceState } from "./raceState.js";
+import { startWigeClient } from "./wigeClient.js";
 
 const app = express();      // create express http server
 
@@ -51,4 +52,6 @@ app.listen(config.port, () => {
     .catch((metadataError: unknown) => {
       console.error("Unexpected metadata loader failure", metadataError);
     });
+
+  startWigeClient();
 });

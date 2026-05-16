@@ -1,0 +1,152 @@
+import WebSocket from "ws";
+import type { RawData } from "ws";
+
+import { config } from "./config.js";
+import { normalizeWigeMessage } from "./normalizers.js";
+import {
+  applyNormalizedWigeMessage,
+  setRaceConnectionStatus,
+} from "./raceState.js";
+import type { WigeMessage } from "./types.js";
+
+const reconnectDelayMs = 5_000;
+
+let socket: WebSocket | null = null;
+let reconnectTimer: NodeJS.Timeout | null = null;
+let shouldReconnect = false;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function rawDataToString(data: RawData): string {
+  if (Buffer.isBuffer(data)) {
+    return data.toString("utf8");
+  }
+
+  if (data instanceof ArrayBuffer) {
+    return Buffer.from(data).toString("utf8");
+  }
+
+  return Buffer.concat(data).toString("utf8");
+}
+
+function countMalformedMessage(reason: string): void {
+  applyNormalizedWigeMessage({ pid: "MALFORMED", raw: {} });
+  console.warn(`Ignored malformed WIGE message: ${reason}`);
+}
+
+function parseWigeMessage(data: RawData): WigeMessage | null {
+  try {
+    const parsedMessage: unknown = JSON.parse(rawDataToString(data));
+
+    if (!isRecord(parsedMessage)) {
+      countMalformedMessage("JSON payload was not an object");
+      return null;
+    }
+
+    return parsedMessage;
+  } catch (parseError) {
+    const message = parseError instanceof Error ? parseError.message : "unknown parse error";
+    countMalformedMessage(message);
+    return null;
+  }
+}
+
+function sendSubscription(activeSocket: WebSocket): void {
+  const subscription = {
+    eventId: config.eventId,
+    eventPid: [...config.livetimingPids],
+    clientLocalTime: Date.now(),
+  };
+
+  activeSocket.send(JSON.stringify(subscription));
+
+  console.log(
+    `WIGE websocket connected; subscribing to event ${config.eventId} pids ${config.livetimingPids.join(",")}`,
+  );
+}
+
+function clearReconnectTimer(): void {
+  if (reconnectTimer === null) {
+    return;
+  }
+
+  clearTimeout(reconnectTimer);
+  reconnectTimer = null;
+}
+
+function scheduleReconnect(): void {
+  if (!shouldReconnect || reconnectTimer !== null) {
+    return;
+  }
+
+  console.log(`WIGE websocket closed; reconnecting in ${reconnectDelayMs}ms`);
+
+  reconnectTimer = setTimeout(() => {
+    reconnectTimer = null;
+    connect();
+  }, reconnectDelayMs);
+}
+
+function connect(): void {
+  if (
+    socket !== null &&
+    (socket.readyState === WebSocket.CONNECTING || socket.readyState === WebSocket.OPEN)
+  ) {
+    return;
+  }
+
+  console.log("Connecting to WIGE LiveTiming websocket...");
+
+  socket = new WebSocket(config.livetimingWsUrl);
+
+  socket.on("open", () => {
+    if (socket === null) {
+      return;
+    }
+
+    setRaceConnectionStatus(true);
+    sendSubscription(socket);
+  });
+
+  socket.on("message", (data) => {
+    const parsedMessage = parseWigeMessage(data);
+
+    if (parsedMessage === null) {
+      return;
+    }
+
+    applyNormalizedWigeMessage(normalizeWigeMessage(parsedMessage));
+  });
+
+  socket.on("close", () => {
+    socket = null;
+    setRaceConnectionStatus(false);
+    scheduleReconnect();
+  });
+
+  socket.on("error", (error) => {
+    console.warn(`WIGE websocket error: ${error.message}`);
+  });
+}
+
+export function startWigeClient(): void {
+  shouldReconnect = true;
+  clearReconnectTimer();
+  connect();
+}
+
+export function stopWigeClient(): void {
+  shouldReconnect = false;
+  clearReconnectTimer();
+  setRaceConnectionStatus(false);
+
+  if (socket === null) {
+    return;
+  }
+
+  const activeSocket = socket;
+  socket = null;
+  activeSocket.close();
+}
