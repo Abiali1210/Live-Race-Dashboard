@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Network architecture | Timing71 documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Network architecture" />
+<meta name="author" content="James Muscat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Timing71 is a motorsport live timing aggregation system. Based around a common timing data format, it enables real-time and post-session analysis of motorsport events." />
+<meta property="og:description" content="Timing71 is a motorsport live timing aggregation system. Based around a common timing data format, it enables real-time and post-session analysis of motorsport events." />
+<link rel="canonical" href="https://info.timing71.org/reference/network_architecture.html" />
+<meta property="og:url" content="https://info.timing71.org/reference/network_architecture.html" />
+<meta property="og:site_name" content="Timing71 documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Network architecture" />
+<script type="application/ld+json">
+{"description":"Timing71 is a motorsport live timing aggregation system. Based around a common timing data format, it enables real-time and post-session analysis of motorsport events.","url":"https://info.timing71.org/reference/network_architecture.html","@type":"WebPage","headline":"Network architecture","author":{"@type":"Person","name":"James Muscat"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://info.timing71.org/feed.xml" title="Timing71 documentation" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">
+      <img src="/assets/logo_64.png" />
+      Timing<span style="color: #00FF00;">71</span>
+      documentation
+    </a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/news.html">Latest news</a><a class="page-link" href="/opensource.html">Open source</a><a class="page-link active" href="/reference.html">Reference</a><a class="page-link" href="https://www.timing71.org/">Timing71 main site</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Network architecture</h1>
+  </header>
+
+  <div class="post-content">
+    <p><img src="/assets/network_architecture.png" alt="Network architecture" /></p>
+
+<h2 id="high-level-overview">High-level overview</h2>
+
+<ul>
+  <li>Data from an <strong>upstream timing provider</strong> is fetched or received by a <strong>timing
+service</strong>, converted into CTD format, and published to the master router. The
+data is also sent to a per-service analysis module.</li>
+  <li>The analysis module updates its internal state and publishes CTD-format
+analysis data to the master router.</li>
+  <li>The master router (a Crossbar WAMP router) publishes all data to <strong>timing
+relays</strong> subscribed to the network.</li>
+  <li>The <strong>DVR process</strong> runs within the master router and logs all received
+timing data to disk in order to generate replay files.</li>
+  <li>The timing relays republish messages to <strong>timing clients</strong> (e.g. users of
+the Timing71 website).</li>
+</ul>
+
+<h2 id="timing-service-protocol-detail">Timing service protocol detail</h2>
+
+<p>The Timing71 network is built over <a href="https://wamp-proto.org/">WAMP</a> and as such
+uses primitives of <em>publish</em>, <em>subscribe</em>, <em>register</em> and <em>call</em>.</p>
+
+<ul>
+  <li>When a timing service first starts, it authenticates with the master router,
+connects to the <code class="language-plaintext highlighter-rouge">timing</code> realm, and publishes its
+<a href="/reference/manifest.html">service manifest</a> to the <code class="language-plaintext highlighter-rouge">CONTROL</code> topic.
+It also registers several RPC endpoints, including a “liveness” check.</li>
+  <li>A <strong>directory process</strong> records all current service manifests, and
+periodically checks for liveness of services, removing dead services from its
+list. It periodically publishes a
+<a href="/reference/directory_listing.html">directory listing</a> message to the
+<code class="language-plaintext highlighter-rouge">DIRECTORY</code> topic. This publish has the <code class="language-plaintext highlighter-rouge">retain</code> flag set so that new
+subscribers automatically receive the most recent message for the topic.</li>
+  <li>Periodically, and usually at approximately the interval declared in its
+manifest’s <code class="language-plaintext highlighter-rouge">pollInterval</code>, a timing service will publish a
+<a href="/reference/state.html">service state message</a> to a topic derived from
+<a href="/reference/constants.html#rpc">RPC</a>.STATE_PUBLISH and the service’s
+UUID.</li>
+  <li>At the same time, the most recent service state is passed to the associated
+analysis process. Periodically, the analysis process will publish any changed
+state to a topic derived from
+<a href="/reference/constants.html#rpc">RPC</a>.ANALYSIS_PUBLISH, the service
+UUID, and the key associated with the analysis data. See
+<a href="/reference/analysis_update.html">analysis update</a> for details.</li>
+  <li>The <strong>DVR process</strong> is automatically subscribed to all state and analysis
+published messages, and records them per UUID. If no data is received for a
+service for ten minutes, the service is assumed to have been shut down, and a
+recording file is compiled.</li>
+</ul>
+
+<h2 id="timing-client-protocol-detail">Timing client protocol detail</h2>
+
+<p>Clients may connect to any of the available timing relays. They need not
+authenticate.</p>
+
+<ul>
+  <li>Clients first obtain a list of current relays via
+<a href="https://www.timing71.org/relays">https://www.timing71.org/relays</a> - a list of
+URLs and current number of connections is given, and clients are encouraged to
+connect to the relay with the fewest current connections.</li>
+  <li>Clients then connect to the timing relay via WAMP.</li>
+  <li>Clients should subscribe to the <code class="language-plaintext highlighter-rouge">DIRECTORY</code> topic to receive a list of current
+timing services.</li>
+  <li>Clients may then subscribe to the desired service topic (remember, derived
+from <a href="/reference/constants.html#rpc">RPC</a>.STATE_PUBLISH and the
+service’s UUID as given in the manifest listing).</li>
+  <li>Clients may also choose to subscribe to analysis update messages. There are a
+range of topics required for a complete analysis state. <code class="language-plaintext highlighter-rouge">topicPrefix</code> is
+formed as <code class="language-plaintext highlighter-rouge">livetiming.analysis/&lt;service UUID&gt;</code>.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/car_messages</code> (prefix-matched)</li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/driver</code></li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/lap</code> (prefix-matched)</li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/messages</code></li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/session</code></li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/static</code></li>
+      <li><code class="language-plaintext highlighter-rouge">${topicPrefix}/stint</code> (prefix-matched)</li>
+    </ul>
+
+    <p>See <a href="/reference/analysis_update.html">analysis update</a> for details.</p>
+  </li>
+  <li>There are a few RPC call endpoints available:
+    <ul>
+      <li>To request a full copy of the current analysis state, clients should call
+<a href="/reference/constants.html#rpc">RPC</a>.REQUEST_ANALYSIS_DATA
+(substituting the service’s UUID).</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </a>
+        <p>
+          &copy;
+          <a class="u-email" href="mailto:jamesremuscat@gmail.com">James Muscat</a>.
+          This work is licensed under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License
+          </a>.
+        </p>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/timing71"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">timing71</span></a></li><li><a href="https://www.twitter.com/timing_71"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">timing_71</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Timing71 is a motorsport live timing aggregation system. Based around a common timing data format, it enables real-time and post-session analysis of motorsport events.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

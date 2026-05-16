@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Logs and runtime files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local caches
+.cache/
+.npm/
+.vite/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Cline local workspace metadata
+# Keep handoff markdown files trackable if you want to show project history/process.
+.cline/cache/
+.cline/tmp/
+.cline/logs/
+.cline/mcp/
+.cline/settings.json
+.cline/tasks/
+
+# Project-specific local duplicates / raw response metadata
+backend/data/bootstrap_copied.json
+exploration-archive/captures/*.headers.txt
+exploration-archive/captures/*.headers.json
+
+# Large or generated local exports can go here later, if needed.
+# Do not ignore backend/data/bootstrap or exploration-archive/captures yet:
+# they are current project artifacts used for offline development.

@@ -1,0 +1,38 @@
+{
+  "car_number": "46",
+  "class": "Klasse 40",
+  "position": 1,
+  "lap": 3,
+  "last_lap": 634.446,
+  "best_lap": 634.446,
+  "gap_to_leader": "10:34.446",
+  "sector_times": [
+    51.449,
+    57.44,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "pit_status": "IN",
+  "pit_stop_count": 4,
+  "driver_name": "Tischner/Tönges",
+  "team_name": "Tischner / Tönges",
+  "vehicle": "BMW M3",
+  "timestamp_source_ms": "1778773254708",
+  "lat": null,
+  "lon": null,
+  "track_pos_m": null,
+  "metadata": {
+    "entrant_id": "526",
+    "drivers": [
+      "Tischner",
+      "Tönges"
+    ],
+    "carshot_url": null,
+    "carshot_url_full": null
+  }
+}
