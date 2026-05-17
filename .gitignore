@@ -51,3 +51,6 @@ exploration-archive/captures/*.headers.json
 # Large or generated local exports can go here later, if needed.
 # Do not ignore backend/data/bootstrap or exploration-archive/captures yet:
 # they are current project artifacts used for offline development.
+# Local agent skills/tooling
+.cline/skills/
+skills-lock.json
