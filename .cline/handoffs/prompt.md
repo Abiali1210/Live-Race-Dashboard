@@ -18,7 +18,7 @@ Before doing any implementation, please resume from the project handoff system a
 - If there is a `prompt.md`, treat it only as this reusable resume prompt, **not** as the main project handoff.
 - The current important handoff after this prompt update is likely:
   ```text
-  .cline/handoffs/2026-05-17-182400-chunk-14-component-extraction.md
+  .cline/handoffs/2026-05-17-224100-chunk-15-leaderboard-controls.md
   ```
 - If a newer timestamped handoff exists, read that newer handoff first instead.
 - If the latest handoff chains from an older one, only read older handoffs if needed for deeper context.
@@ -188,6 +188,18 @@ Frontend Chunk 14 is complete.
   - extracted dashboard components under `frontend/src/components/dashboard/`
   - simplified `frontend/src/App.tsx` so it orchestrates polling, selected-car state, derived dashboard data, and component composition
   - preserved local-backend-only data flow and selected-car behavior
+  - frontend build/lint passed.
+
+Frontend Chunk 15 is complete.
+
+- Chunk 15 — leaderboard controls and selected-car UX hardening:
+  - added local frontend search across car number, class, team, drivers, and car/model text
+  - added class dropdown derived from current timing data
+  - added compact sort dropdown for live position, car number, class, team, lap count, best lap, and last lap
+  - preserved selected-car behavior under search/filter/sort
+  - added warning when selected car is hidden by search/class filters
+  - added clearer filtered empty state with reset filters action
+  - added `frontend/src/components/dashboard/LeaderboardPanel.tsx`
   - frontend build/lint passed.
 
 Additional current assets:
