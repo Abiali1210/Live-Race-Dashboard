@@ -23,7 +23,9 @@ export function MessagesPanel({ messages }: MessagesPanelProps) {
           ))}
         </div>
       ) : (
-        <p className="panel-note">No race-control messages received yet.</p>
+        <p className="panel-note">
+          No race-control messages received yet. WIGE messages arrive only when the live feed emits them.
+        </p>
       )}
     </article>
   );

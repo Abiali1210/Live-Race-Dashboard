@@ -22,7 +22,10 @@ export function FeaturedCarPanel({ car, selectedCarNumber }: FeaturedCarPanelPro
           <p className="eyebrow">Selected car</p>
           <h2>{selectedCarNumber === null ? "Current leader" : `Car #${selectedCarNumber}`}</h2>
         </div>
-        <p className="panel-note">Waiting for timing cars.</p>
+        <p className="panel-note">
+          Waiting for timing cars from the local backend. Once WIGE car packets arrive,
+          selecting a row in the leaderboard will pin that car here.
+        </p>
       </article>
     );
   }

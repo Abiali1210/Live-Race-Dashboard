@@ -22,7 +22,10 @@ export function TrackStatePanel({ trackStateSummary }: TrackStatePanelProps) {
           ))}
         </dl>
       ) : (
-        <p className="panel-note">Waiting for track-state packet.</p>
+        <p className="panel-note">
+          Waiting for a WIGE track-state packet. Until then, the dashboard leaves this panel unclassified
+          rather than guessing race-control status.
+        </p>
       )}
     </article>
   );
