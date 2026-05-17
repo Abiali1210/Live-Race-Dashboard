@@ -8,7 +8,7 @@ import {
   loadEventhubMetadata,
 } from "./eventhubMetadata.js";
 import { getRaceState, getRaceStateSummary } from "./raceState.js";
-import { getWigeClientStatus, startWigeClient } from "./wigeClient.js";
+import { getWigeClientStatus, startWigeClient, stopWigeClient } from "./wigeClient.js";
 
 const app = express();      // create express http server
 
@@ -47,7 +47,7 @@ app.get("/api/status", (_req, res) => {
   });
 });
 
-app.listen(config.port, () => {
+const server = app.listen(config.port, () => {
   console.log(`Live Race Dash backend listening on http://localhost:${config.port}`);
 
   void loadEventhubMetadata()
@@ -67,3 +67,21 @@ app.listen(config.port, () => {
 
   startWigeClient();
 });
+
+function shutdown(signal: NodeJS.Signals): void {
+  console.log(`Received ${signal}; shutting down Live Race Dash backend...`);
+  stopWigeClient();
+
+  server.close((closeError) => {
+    if (closeError) {
+      console.error("HTTP server shutdown failed", closeError);
+      process.exit(1);
+    }
+
+    console.log("Live Race Dash backend stopped.");
+    process.exit(0);
+  });
+}
+
+process.once("SIGINT", shutdown);
+process.once("SIGTERM", shutdown);

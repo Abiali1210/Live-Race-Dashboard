@@ -1,10 +1,13 @@
+import { getMetadataByCarNumber } from "./eventhubMetadata.js";
 import type { NormalizedWigeMessage } from "./normalizers.js";
-import type { RaceState, RaceStateCounters } from "./types.js";
+import type { RaceState, RaceStateCounters, TimingCar } from "./types.js";
 
 export type RaceStateSummary = {
   connected: boolean;
   lastUpdate: string | null;
   carCount: number;
+  carsWithMetadata: number;
+  carsWithoutMetadata: number;
   messageCount: number;
   hasTrackState: boolean;
   hasStats: boolean;
@@ -64,6 +67,15 @@ function incrementCounter(pid: NormalizedWigeMessage["pid"]): void {
   raceState.counters.other += 1;
 }
 
+function attachMetadataToTimingCars(cars: TimingCar[]): TimingCar[] {
+  const metadataByCarNumber = getMetadataByCarNumber();
+
+  return cars.map((car) => ({
+    ...car,
+    metadata: metadataByCarNumber[car.carNumber] ?? null,
+  }));
+}
+
 export function getRaceState(): RaceState {
   return structuredClone(raceState);
 }
@@ -73,6 +85,8 @@ export function getRaceStateSummary(): RaceStateSummary {
     connected: raceState.connected,
     lastUpdate: raceState.lastUpdate,
     carCount: raceState.cars.length,
+    carsWithMetadata: raceState.cars.filter((car) => car.metadata !== null).length,
+    carsWithoutMetadata: raceState.cars.filter((car) => car.metadata === null).length,
     messageCount: raceState.messages.length,
     hasTrackState: raceState.trackState !== null,
     hasStats: raceState.stats !== null,
@@ -94,7 +108,7 @@ export function applyNormalizedWigeMessage(message: NormalizedWigeMessage): Race
   incrementCounter(message.pid);
 
   if (message.pid === "0" && "cars" in message) {
-    raceState.cars = message.cars;
+    raceState.cars = attachMetadataToTimingCars(message.cars);
     markUpdated();
     return getRaceState();
   }

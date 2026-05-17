@@ -18,7 +18,7 @@ Before doing any implementation, please resume from the project handoff system a
 - If there is a `prompt.md`, treat it only as this reusable resume prompt, **not** as the main project handoff.
 - The current important handoff is likely:
   ```text
-  .cline/handoffs/2026-05-17-033000-chunk-8-complete.md
+  .cline/handoffs/2026-05-17-122400-chunk-10-backend-ready.md
   ```
 - If a newer timestamped handoff exists, read that newer handoff first instead.
 
@@ -77,7 +77,7 @@ Before doing any implementation, please resume from the project handoff system a
 
 ## 7. Current known status at the time this prompt was updated
 
-Backend Milestone 1 chunks 1–8 are complete:
+Backend Milestone 1 chunks 1–10 are complete. The backend is ready for Milestone 2 frontend work:
 
 - Chunk 1 — backend package skeleton.
 - Chunk 2 — Express `/health` endpoint.
@@ -106,6 +106,15 @@ Backend Milestone 1 chunks 1–8 are complete:
   - updates in-memory `RaceState` through controlled functions in `raceState.ts`
   - `GET /api/state` now shows live-updated `connected`, `lastUpdate`, `cars`, `trackState`, `messages`, `stats`, and `counters`
   - includes simple polite reconnect behavior with a `5000ms` delay.
+- Chunk 9 — backend status/debug endpoint:
+  - added `GET /api/status`
+  - separates compact backend/WIGE diagnostics from full race data in `/api/state`
+  - exposes metadata summary, WIGE connection status, timestamps/errors, and race-state counts/counters.
+- Chunk 10 — backend frontend-readiness hardening:
+  - live WIGE timing cars in `/api/state.cars[]` are enriched with Eventhub metadata when available
+  - `/api/status.raceState` reports `carsWithMetadata` and `carsWithoutMetadata`
+  - `/api/status.wige` reports message diagnostics such as connect attempts, reconnect count, total messages, last message time/PID, and message counts by PID
+  - `server.ts` wires graceful shutdown for `SIGINT`/`SIGTERM` using `stopWigeClient()` and HTTP server close.
 
 Current backend endpoints:
 
@@ -113,39 +122,34 @@ Current backend endpoints:
 GET /health
 GET /api/metadata
 GET /api/state
+GET /api/status
 ```
 
 The next planned implementation area is:
 
 ```text
-Milestone 1 Chunk 9 — backend debug/status endpoint
+Milestone 2 — frontend scaffold and dashboard UI
 ```
 
-Recommended Chunk 9 scope:
+Recommended Milestone 2 starting scope:
 
-- Add a non-noisy endpoint such as `GET /api/status` or `GET /api/debug`.
-- Expose backend/WIGE operational diagnostics such as:
-  - configured event ID
-  - subscribed WIGE PIDs
-  - websocket connected/disconnected state
-  - last live update timestamp
-  - race-state counters
-  - reconnect delay
-  - last connect time
-  - last disconnect time
-  - last error message, if any
-  - metadata summary.
-- Keep it backend-only; do not add frontend, database, replay, GPS, or complicated reconnect backoff in Chunk 9 unless explicitly asked.
+- Create a React + TypeScript + Vite frontend.
+- Keep frontend read-only at first.
+- Frontend should consume only local backend endpoints, especially:
+  - `GET /api/status` for backend/WIGE diagnostics
+  - `GET /api/state` for live race state and metadata-enriched cars
+  - `GET /api/metadata` only if needed for supplemental metadata views.
+- Do not connect frontend directly to WIGE/Eventhub.
 
 Important current gotchas:
 
 - The backend now makes a real external websocket connection when started.
 - WIGE may briefly fail TLS/connect and then reconnect successfully; this was observed and is handled by reconnect logic.
-- `/api/state.connected` means the websocket is currently open; it does not yet expose detailed freshness/diagnostic state.
+- `/api/status` is the preferred endpoint for operational diagnostics.
 - WIGE sends updates event-by-event over websocket; our backend does not poll WIGE on a fixed interval.
 - Frontend later should poll or subscribe to the local backend only, not WIGE/Eventhub directly.
-- `TimingCar.metadata` is still `null`; Eventhub metadata joining can be a later Chunk 8.5/9.5 if desired.
-- `stopWigeClient()` exists but is not yet wired into graceful shutdown.
+- `TimingCar.metadata` is now populated when a matching Eventhub car number exists; `/api/status.raceState.carsWithoutMetadata` reveals any misses.
+- Graceful shutdown is wired for `SIGINT`/`SIGTERM`, but full production deployment hardening is still future work.
 
 ## 8. Communication style I want
 

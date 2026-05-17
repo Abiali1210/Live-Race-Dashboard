@@ -24,6 +24,12 @@ export type WigeClientStatus = {
   lastCloseCode: number | null;
   lastCloseReason: string | null;
   lastError: string | null;
+  connectAttemptCount: number;
+  reconnectCount: number;
+  messageCount: number;
+  lastMessageAt: string | null;
+  lastMessagePid: string | null;
+  messageCountByPid: Record<string, number>;
   malformedMessageCount: number;
 };
 
@@ -44,6 +50,12 @@ const wigeClientStatus: Omit<
   lastCloseCode: null,
   lastCloseReason: null,
   lastError: null,
+  connectAttemptCount: 0,
+  reconnectCount: 0,
+  messageCount: 0,
+  lastMessageAt: null,
+  lastMessagePid: null,
+  messageCountByPid: {},
   malformedMessageCount: 0,
 };
 
@@ -67,6 +79,14 @@ function countMalformedMessage(reason: string): void {
   wigeClientStatus.malformedMessageCount += 1;
   applyNormalizedWigeMessage({ pid: "MALFORMED", raw: {} });
   console.warn(`Ignored malformed WIGE message: ${reason}`);
+}
+
+function recordMessage(pid: string): void {
+  wigeClientStatus.messageCount += 1;
+  wigeClientStatus.lastMessageAt = new Date().toISOString();
+  wigeClientStatus.lastMessagePid = pid;
+  wigeClientStatus.messageCountByPid[pid] =
+    (wigeClientStatus.messageCountByPid[pid] ?? 0) + 1;
 }
 
 function parseWigeMessage(data: RawData): WigeMessage | null {
@@ -119,6 +139,7 @@ function scheduleReconnect(): void {
 
   reconnectTimer = setTimeout(() => {
     reconnectTimer = null;
+    wigeClientStatus.reconnectCount += 1;
     connect();
   }, reconnectDelayMs);
 }
@@ -132,6 +153,7 @@ function connect(): void {
   }
 
   console.log("Connecting to WIGE LiveTiming websocket...");
+  wigeClientStatus.connectAttemptCount += 1;
 
   socket = new WebSocket(config.livetimingWsUrl);
 
@@ -153,7 +175,9 @@ function connect(): void {
       return;
     }
 
-    applyNormalizedWigeMessage(normalizeWigeMessage(parsedMessage));
+    const normalizedMessage = normalizeWigeMessage(parsedMessage);
+    recordMessage(normalizedMessage.pid);
+    applyNormalizedWigeMessage(normalizedMessage);
   });
 
   socket.on("close", (code, reason) => {
@@ -195,6 +219,7 @@ export function getWigeClientStatus(): WigeClientStatus {
   return {
     ...wigeClientStatus,
     subscribedPids: [...wigeClientStatus.subscribedPids],
+    messageCountByPid: { ...wigeClientStatus.messageCountByPid },
     connected: socket?.readyState === WebSocket.OPEN,
     shouldReconnect,
     reconnectScheduled: reconnectTimer !== null,
