@@ -18,7 +18,7 @@ Before doing any implementation, please resume from the project handoff system a
 - If there is a `prompt.md`, treat it only as this reusable resume prompt, **not** as the main project handoff.
 - The current important handoff is likely:
   ```text
-  .cline/handoffs/2026-05-16-205500-chunk-6-complete.md
+  .cline/handoffs/2026-05-17-033000-chunk-8-complete.md
   ```
 - If a newer timestamped handoff exists, read that newer handoff first instead.
 
@@ -77,7 +77,7 @@ Before doing any implementation, please resume from the project handoff system a
 
 ## 7. Current known status at the time this prompt was updated
 
-Backend Milestone 1 chunks 1–6 are complete:
+Backend Milestone 1 chunks 1–8 are complete:
 
 - Chunk 1 — backend package skeleton.
 - Chunk 2 — Express `/health` endpoint.
@@ -92,7 +92,20 @@ Backend Milestone 1 chunks 1–6 are complete:
   - added `backend/src/raceState.ts`
   - added default empty in-memory `RaceState`
   - added `GET /api/state`
-  - no WIGE websocket logic yet.
+  - originally empty until WIGE ingestion was added later.
+- Chunk 7 — WIGE normalizer functions:
+  - added `backend/src/normalizers.ts`
+  - normalizes captured WIGE PID `0`, `3`, `4`, and `9002` messages.
+  - kept normalizers pure/offline/testable against captured WIGE JSON.
+  - added `NormalizedWigeMessage` routing for live ingestion.
+- Chunk 8 — WIGE live websocket ingestion:
+  - added `backend/src/wigeClient.ts`
+  - backend connects to `wss://livetiming.azurewebsites.net`
+  - subscribes to event `50` and PIDs `[0, 4, 3, 9002]`
+  - routes inbound messages through `normalizeWigeMessage()`
+  - updates in-memory `RaceState` through controlled functions in `raceState.ts`
+  - `GET /api/state` now shows live-updated `connected`, `lastUpdate`, `cars`, `trackState`, `messages`, `stats`, and `counters`
+  - includes simple polite reconnect behavior with a `5000ms` delay.
 
 Current backend endpoints:
 
@@ -105,17 +118,34 @@ GET /api/state
 The next planned implementation area is:
 
 ```text
-Milestone 1 Chunk 7 — WIGE normalizer functions
+Milestone 1 Chunk 9 — backend debug/status endpoint
 ```
 
-Before implementing Chunk 7, inspect WIGE capture artifacts:
+Recommended Chunk 9 scope:
 
-```text
-exploration-archive/captures/livetiming-ws-event-50-2026-05-14T15-40-55-034Z.jsonl
-exploration-archive/captures/livetiming-ws-summary.txt
-```
+- Add a non-noisy endpoint such as `GET /api/status` or `GET /api/debug`.
+- Expose backend/WIGE operational diagnostics such as:
+  - configured event ID
+  - subscribed WIGE PIDs
+  - websocket connected/disconnected state
+  - last live update timestamp
+  - race-state counters
+  - reconnect delay
+  - last connect time
+  - last disconnect time
+  - last error message, if any
+  - metadata summary.
+- Keep it backend-only; do not add frontend, database, replay, GPS, or complicated reconnect backoff in Chunk 9 unless explicitly asked.
 
-Chunk 7 should stay offline/testable against captured WIGE JSON. Do **not** connect to the live WIGE websocket yet; that belongs to Chunk 8.
+Important current gotchas:
+
+- The backend now makes a real external websocket connection when started.
+- WIGE may briefly fail TLS/connect and then reconnect successfully; this was observed and is handled by reconnect logic.
+- `/api/state.connected` means the websocket is currently open; it does not yet expose detailed freshness/diagnostic state.
+- WIGE sends updates event-by-event over websocket; our backend does not poll WIGE on a fixed interval.
+- Frontend later should poll or subscribe to the local backend only, not WIGE/Eventhub directly.
+- `TimingCar.metadata` is still `null`; Eventhub metadata joining can be a later Chunk 8.5/9.5 if desired.
+- `stopWigeClient()` exists but is not yet wired into graceful shutdown.
 
 ## 8. Communication style I want
 
