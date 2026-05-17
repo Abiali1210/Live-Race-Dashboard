@@ -182,6 +182,23 @@
    Invoke-RestMethod http://localhost:3001/api/status | ConvertTo-Json -Depth 8
    ```
 
+## Frontend Design Skill Strategy
+
+- Workspace skills were cleaned up after Chunk 10 so Cline recognizes the local frontend design skills.
+- Recognized workspace skills relevant to Milestone 2:
+  - `impeccable` — primary UX/product-design planning, dashboard IA, accessibility, responsive behavior, states, audit/polish.
+  - `industrial-brutalist-ui` — primary visual direction for Live Race Dash: tactical motorsport telemetry, rigid grids, monospace data labels, race-control feel.
+  - `emil-design-eng` — interaction polish after core UI exists: hover/active states, loading feel, purposeful motion, correct easing.
+  - `redesign-existing-projects` — later pass to upgrade the initial frontend without breaking functionality.
+  - `high-end-visual-design` — selective premium visual polish if the UI feels too plain.
+  - `minimalist-ui` — fallback direction if the tactical/brutalist style feels too intense.
+  - `gpt-taste` — better saved for a portfolio/landing page, not the first data-heavy dashboard MVP.
+- Recommended Milestone 2 design direction: **tactical motorsport race-control dashboard** using `impeccable` for product UX and `industrial-brutalist-ui` for visual language.
+- Frontend should remain read-only at first and consume only local backend endpoints:
+  - `GET /api/status`
+  - `GET /api/state`
+  - optionally `GET /api/metadata`
+
 ## Pending Work / Backlog
 
 - Frontend dashboard scaffold and UI.
