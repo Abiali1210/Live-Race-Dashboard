@@ -4,13 +4,21 @@ import { fetchRaceState, fetchStatus } from "./api/client";
 import type { ApiStatus, RaceState } from "./api/types";
 import { DiagnosticsPanel } from "./components/dashboard/DiagnosticsPanel";
 import { FeaturedCarPanel } from "./components/dashboard/FeaturedCarPanel";
-import { LeaderboardTable } from "./components/dashboard/LeaderboardTable";
+import { LeaderboardPanel } from "./components/dashboard/LeaderboardPanel";
+import { LoadingDashboard } from "./components/dashboard/LoadingDashboard";
 import { MessagesPanel } from "./components/dashboard/MessagesPanel";
 import { MetricCard } from "./components/dashboard/MetricCard";
 import { StatusPill } from "./components/dashboard/StatusPill";
 import { TrackStatePanel } from "./components/dashboard/TrackStatePanel";
 import { TrackMap } from "./components/TrackMap";
 import { formatDateTime, formatTrackStateSummary } from "./dashboard/formatters";
+import {
+  allClassesFilterValue,
+  filterLeaderboardCars,
+  getAvailableClasses,
+  sortLeaderboardCars,
+  type LeaderboardSortMode,
+} from "./dashboard/leaderboardFilters";
 import "./App.css";
 
 type DashboardData = {
@@ -27,6 +35,9 @@ function App() {
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [lastSuccessfulRefreshAt, setLastSuccessfulRefreshAt] = useState<string | null>(null);
+  const [leaderboardSearch, setLeaderboardSearch] = useState("");
+  const [selectedClass, setSelectedClass] = useState(allClassesFilterValue);
+  const [leaderboardSortMode, setLeaderboardSortMode] = useState<LeaderboardSortMode>("position");
   const [selectedCarNumber, setSelectedCarNumber] = useState<string | null>(null);
   const hasLoadedDataRef = useRef(false);
 
@@ -82,23 +93,41 @@ function App() {
       ? null
       : leaderboardCars.find((car) => car.carNumber === selectedCarNumber) ?? null;
     const featuredCar = selectedCar ?? leaderboardCars[0] ?? null;
+    const availableClasses = getAvailableClasses(leaderboardCars);
+    const filteredLeaderboardCars = filterLeaderboardCars(
+      leaderboardCars,
+      leaderboardSearch,
+      selectedClass,
+    );
+    const visibleLeaderboardCars = sortLeaderboardCars(filteredLeaderboardCars, leaderboardSortMode);
     const recentMessages = dashboardData.raceState.messages.slice(-10).reverse();
 
     return {
+      availableClasses,
       backendConnected: errorMessage === null,
       featuredCar,
+      filteredLeaderboardCars: visibleLeaderboardCars,
+      hasActiveLeaderboardFilters: leaderboardSearch.trim() !== ""
+        || selectedClass !== allClassesFilterValue,
       leaderboardCars,
       recentMessages,
       refreshedAtLabel: formatDateTime(lastSuccessfulRefreshAt),
       selectedCarNumber: featuredCar?.carNumber ?? null,
+      selectedCarHiddenByFilters: featuredCar !== null
+        && !filteredLeaderboardCars.some((car) => car.carNumber === featuredCar.carNumber),
       trackStateSummary: dashboardData.raceState.trackState === null
         ? null
         : formatTrackStateSummary(dashboardData.raceState.trackState),
       wigeConnected: dashboardData.status.wige.connected,
     };
-  }, [dashboardData, errorMessage, lastSuccessfulRefreshAt, selectedCarNumber]);
+  }, [dashboardData, errorMessage, lastSuccessfulRefreshAt, leaderboardSearch, leaderboardSortMode, selectedCarNumber, selectedClass]);
 
   const hasRefreshError = dashboardData !== null && errorMessage !== null;
+
+  function clearLeaderboardFilters(): void {
+    setLeaderboardSearch("");
+    setSelectedClass(allClassesFilterValue);
+  }
 
   return (
     <main className="app-shell">
@@ -121,9 +150,16 @@ function App() {
       </header>
 
       {loadState === "loading" && (
-        <section className="notice-panel" aria-live="polite">
-          Connecting to the local backend…
-        </section>
+        <>
+          <section className="notice-panel loading-panel" aria-live="polite">
+            <h2>Connecting to local race control</h2>
+            <p>
+              Loading the local backend snapshot for WIGE timing, Eventhub metadata,
+              and dashboard diagnostics. The page retries automatically every {pollIntervalMs / 1_000} seconds.
+            </p>
+          </section>
+          <LoadingDashboard />
+        </>
       )}
 
       {loadState === "error" && (
@@ -132,16 +168,20 @@ function App() {
           <p>{errorMessage}</p>
           <p>
             Start the backend with <code>cd backend; npm start</code>, then keep
-            this page open. It retries every {pollIntervalMs / 1_000} seconds.
+            this page open. The frontend retries every {pollIntervalMs / 1_000} seconds and will show
+            timing rows once the local backend has received WIGE events.
           </p>
         </section>
       )}
 
       {hasRefreshError && (
-        <section className="notice-panel error-panel" aria-live="polite">
-          <h2>Live refresh failed</h2>
+        <section className="notice-panel stale-panel" aria-live="polite">
+          <h2>Live refresh interrupted</h2>
           <p>{errorMessage}</p>
-          <p>Keeping the last successful dashboard data visible while polling continues.</p>
+          <p>
+            Keeping the last successful dashboard snapshot visible
+            {lastSuccessfulRefreshAt === null ? "" : ` from ${formatDateTime(lastSuccessfulRefreshAt)}`} while polling continues.
+          </p>
         </section>
       )}
 
@@ -171,19 +211,22 @@ function App() {
           </section>
 
           <section className="dashboard-grid" aria-label="Live race dashboard panels">
-            <article className="panel leaderboard-panel">
-              <div className="panel-heading">
-                <p className="eyebrow">Timing snapshot</p>
-                <h2>Full field</h2>
-                <span className="panel-kicker">{dashboardView.leaderboardCars.length} cars</span>
-              </div>
-
-              <LeaderboardTable
-                cars={dashboardView.leaderboardCars}
-                selectedCarNumber={dashboardView.selectedCarNumber}
-                onSelectCar={setSelectedCarNumber}
-              />
-            </article>
+            <LeaderboardPanel
+              availableClasses={dashboardView.availableClasses}
+              filteredCars={dashboardView.filteredLeaderboardCars}
+              hasActiveFilters={dashboardView.hasActiveLeaderboardFilters}
+              leaderboardSearch={leaderboardSearch}
+              selectedCarHiddenByFilters={dashboardView.selectedCarHiddenByFilters}
+              selectedCarNumber={dashboardView.selectedCarNumber}
+              selectedClass={selectedClass}
+              sortMode={leaderboardSortMode}
+              totalCars={dashboardView.leaderboardCars}
+              onClearFilters={clearLeaderboardFilters}
+              onLeaderboardSearchChange={setLeaderboardSearch}
+              onSelectedClassChange={setSelectedClass}
+              onSelectCar={setSelectedCarNumber}
+              onSortModeChange={setLeaderboardSortMode}
+            />
 
             <article className="panel map-panel">
               <div className="panel-heading">
