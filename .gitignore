@@ -44,6 +44,7 @@ Desktop.ini
 
 # Project-specific local duplicates / raw response metadata
 backend/data/bootstrap_copied.json
+backend/playback/
 exploration-archive/captures/*.headers.txt
 exploration-archive/captures/*.headers.json
 
