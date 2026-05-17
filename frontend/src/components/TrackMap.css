@@ -1,0 +1,174 @@
+﻿.track-map {
+  --track-map-surface: oklch(17% 0.012 240);
+  --track-map-line: oklch(81% 0.045 91);
+  --track-map-line-muted: oklch(48% 0.018 240);
+  --track-map-accent: oklch(79% 0.16 88);
+  --track-map-grid: oklch(42% 0.02 240 / 0.24);
+  --track-map-copy: oklch(74% 0.018 235);
+  --track-map-muted: oklch(58% 0.018 235);
+  --track-map-checker-dark: oklch(18% 0.01 240);
+  --track-map-checker-light: oklch(88% 0.012 235);
+
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.track-map__stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklch, var(--track-map-line-muted) 55%, transparent);
+  background:
+    radial-gradient(circle at 54% 44%, oklch(80% 0.11 88 / 0.13), transparent 34%),
+    linear-gradient(135deg, oklch(21% 0.014 240), var(--track-map-surface));
+  padding: clamp(18px, 3vw, 32px);
+  outline: none;
+  transition:
+    border-color 240ms cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 240ms cubic-bezier(0.25, 1, 0.5, 1),
+    background 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.track-map__stage::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent, oklch(90% 0.04 95 / 0.08), transparent),
+    repeating-linear-gradient(0deg, transparent 0 22px, oklch(90% 0.02 235 / 0.025) 22px 23px);
+  opacity: 0.42;
+}
+
+.track-map__stage:hover,
+.track-map__stage:focus-visible {
+  border-color: color-mix(in oklch, var(--track-map-accent) 72%, transparent);
+  box-shadow:
+    0 0 0 1px oklch(80% 0.13 88 / 0.18),
+    0 0 26px oklch(80% 0.13 88 / 0.14);
+}
+
+.track-map__stage:focus-visible {
+  outline: 2px solid var(--track-map-accent);
+  outline-offset: 3px;
+}
+
+.track-map__svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  max-height: min(72vh, 760px);
+}
+
+.track-map__grid path {
+  stroke: var(--track-map-grid);
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+}
+
+.track-map__secondary path {
+  stroke: var(--track-map-line-muted);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.58;
+  vector-effect: non-scaling-stroke;
+}
+
+.track-map__halo,
+.track-map__outline {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.track-map__halo {
+  stroke: oklch(78% 0.16 88 / 0.34);
+  stroke-width: 13;
+  opacity: 0.26;
+  filter: url("#track-map-glow");
+  transition: opacity 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.track-map__outline {
+  stroke: var(--track-map-line);
+  stroke-width: 4.8;
+  filter: drop-shadow(0 0 4px oklch(80% 0.12 88 / 0.22));
+  transition:
+    stroke 240ms cubic-bezier(0.25, 1, 0.5, 1),
+    stroke-width 240ms cubic-bezier(0.25, 1, 0.5, 1),
+    filter 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.track-map__stage:hover .track-map__halo,
+.track-map__stage:focus-visible .track-map__halo {
+  opacity: 0.48;
+}
+
+.track-map__stage:hover .track-map__outline,
+.track-map__stage:focus-visible .track-map__outline {
+  stroke: var(--track-map-accent);
+  stroke-width: 5.6;
+  filter: drop-shadow(0 0 8px oklch(80% 0.14 88 / 0.36));
+}
+
+.track-map__direction-markers path {
+  fill: oklch(63% 0.2 29);
+  opacity: 0.78;
+}
+
+.track-map__start-finish path {
+  opacity: 0.86;
+}
+
+.track-map__labels text {
+  fill: var(--track-map-copy);
+  font-family: var(--mono, "SFMono-Regular", Consolas, monospace);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  paint-order: stroke;
+  stroke: oklch(14% 0.012 240 / 0.78);
+  stroke-width: 4px;
+  text-transform: uppercase;
+}
+
+.track-map__caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  color: var(--track-map-muted);
+  font-family: var(--mono, "SFMono-Regular", Consolas, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .track-map__stage {
+    padding: 14px;
+  }
+
+  .track-map__svg {
+    min-height: 280px;
+  }
+
+  .track-map__labels text {
+    font-size: 18px;
+  }
+
+  .track-map__caption {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track-map__stage,
+  .track-map__halo,
+  .track-map__outline {
+    transition-duration: 0.01ms;
+  }
+}

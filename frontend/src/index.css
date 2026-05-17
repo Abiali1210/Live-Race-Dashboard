@@ -1,19 +1,20 @@
 :root {
-  --bg: #08090a;
-  --surface: #101214;
-  --surface-raised: #15181b;
-  --border: #2a2f35;
-  --text: #d8dde2;
-  --text-strong: #f3f6f8;
-  --text-muted: #8c96a0;
-  --accent: #ff2a2a;
-  --success: #44d17a;
-  --danger: #ff4040;
+  --bg: oklch(13% 0.01 240);
+  --surface: oklch(18% 0.012 240);
+  --surface-raised: oklch(22% 0.014 240);
+  --border: oklch(32% 0.018 240);
+  --text: oklch(86% 0.015 235);
+  --text-strong: oklch(96% 0.008 235);
+  --text-muted: oklch(66% 0.018 235);
+  --accent: oklch(68% 0.22 29);
+  --success: oklch(75% 0.16 151);
+  --danger: oklch(68% 0.21 29);
   --mono: "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   color: var(--text);
   background: var(--bg);
+  color-scheme: dark;
   font-family: var(--sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,9 +31,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at top right, rgba(255, 42, 42, 0.14), transparent 34rem),
+    linear-gradient(oklch(90% 0.02 235 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(90% 0.02 235 / 0.025) 1px, transparent 1px),
+    radial-gradient(circle at top right, oklch(68% 0.22 29 / 0.16), transparent 34rem),
     var(--bg);
   background-size: 44px 44px, 44px 44px, auto, auto;
 }

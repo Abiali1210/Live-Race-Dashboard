@@ -1,7 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { fetchRaceState, fetchStatus } from "./api/client";
-import type { ApiStatus, RaceState, TimingCar } from "./api/types";
+import type { ApiStatus, RaceState } from "./api/types";
+import { DiagnosticsPanel } from "./components/dashboard/DiagnosticsPanel";
+import { FeaturedCarPanel } from "./components/dashboard/FeaturedCarPanel";
+import { LeaderboardTable } from "./components/dashboard/LeaderboardTable";
+import { MessagesPanel } from "./components/dashboard/MessagesPanel";
+import { MetricCard } from "./components/dashboard/MetricCard";
+import { StatusPill } from "./components/dashboard/StatusPill";
+import { TrackStatePanel } from "./components/dashboard/TrackStatePanel";
+import { TrackMap } from "./components/TrackMap";
+import { formatDateTime, formatTrackStateSummary } from "./dashboard/formatters";
 import "./App.css";
 
 type DashboardData = {
@@ -13,45 +22,13 @@ type LoadState = "loading" | "ready" | "error";
 
 const pollIntervalMs = 5_000;
 
-function formatDateTime(value: string | null): string {
-  if (value === null) {
-    return "Waiting for data";
-  }
-
-  return new Intl.DateTimeFormat(undefined, {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  }).format(new Date(value));
-}
-
-function formatOptional(value: string | number | null | undefined): string {
-  if (value === null || value === undefined || value === "") {
-    return "—";
-  }
-
-  return String(value);
-}
-
-function getCarTeamName(car: TimingCar): string {
-  return car.metadata?.teamName ?? car.teamName ?? "Unknown team";
-}
-
-function getCarModel(car: TimingCar): string {
-  const make = car.metadata?.make;
-  const model = car.metadata?.model;
-
-  if (make !== null && make !== undefined && model !== null && model !== undefined) {
-    return `${make} ${model}`;
-  }
-
-  return car.vehicle ?? make ?? "Unknown vehicle";
-}
-
 function App() {
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [lastSuccessfulRefreshAt, setLastSuccessfulRefreshAt] = useState<string | null>(null);
+  const [selectedCarNumber, setSelectedCarNumber] = useState<string | null>(null);
+  const hasLoadedDataRef = useRef(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -67,8 +44,10 @@ function App() {
           return;
         }
 
+        hasLoadedDataRef.current = true;
         setDashboardData({ status, raceState });
         setErrorMessage(null);
+        setLastSuccessfulRefreshAt(new Date().toISOString());
         setLoadState("ready");
       } catch (caughtError) {
         if (!isMounted) {
@@ -80,7 +59,7 @@ function App() {
           : "Unable to load backend data";
 
         setErrorMessage(message);
-        setLoadState("error");
+        setLoadState(hasLoadedDataRef.current ? "ready" : "error");
       }
     }
 
@@ -93,10 +72,33 @@ function App() {
     };
   }, []);
 
-  const leadingCars = useMemo(
-    () => dashboardData?.raceState.cars.slice(0, 5) ?? [],
-    [dashboardData],
-  );
+  const dashboardView = useMemo(() => {
+    if (dashboardData === null) {
+      return null;
+    }
+
+    const leaderboardCars = dashboardData.raceState.cars;
+    const selectedCar = selectedCarNumber === null
+      ? null
+      : leaderboardCars.find((car) => car.carNumber === selectedCarNumber) ?? null;
+    const featuredCar = selectedCar ?? leaderboardCars[0] ?? null;
+    const recentMessages = dashboardData.raceState.messages.slice(-10).reverse();
+
+    return {
+      backendConnected: errorMessage === null,
+      featuredCar,
+      leaderboardCars,
+      recentMessages,
+      refreshedAtLabel: formatDateTime(lastSuccessfulRefreshAt),
+      selectedCarNumber: featuredCar?.carNumber ?? null,
+      trackStateSummary: dashboardData.raceState.trackState === null
+        ? null
+        : formatTrackStateSummary(dashboardData.raceState.trackState),
+      wigeConnected: dashboardData.status.wige.connected,
+    };
+  }, [dashboardData, errorMessage, lastSuccessfulRefreshAt, selectedCarNumber]);
+
+  const hasRefreshError = dashboardData !== null && errorMessage !== null;
 
   return (
     <main className="app-shell">
@@ -105,16 +107,15 @@ function App() {
           <p className="eyebrow">ADAC RAVENOL 24h Nürburgring 2026</p>
           <h1>Live Race Dash</h1>
           <p className="hero-copy">
-            Frontend connection test for the local backend race state. This is a
-            temporary preview before the full dashboard layout.
+            Race-control shell for local backend timing data, metadata, and circuit context.
           </p>
         </div>
 
         <div className="connection-stack" aria-label="Connection summary">
-          <StatusPill label="Backend" isConnected={loadState === "ready"} />
+          <StatusPill label="Backend" isConnected={dashboardView?.backendConnected ?? false} />
           <StatusPill
             label="WIGE"
-            isConnected={dashboardData?.status.wige.connected ?? false}
+            isConnected={dashboardView?.wigeConnected ?? false}
           />
         </div>
       </header>
@@ -136,9 +137,17 @@ function App() {
         </section>
       )}
 
-      {dashboardData !== null && (
+      {hasRefreshError && (
+        <section className="notice-panel error-panel" aria-live="polite">
+          <h2>Live refresh failed</h2>
+          <p>{errorMessage}</p>
+          <p>Keeping the last successful dashboard data visible while polling continues.</p>
+        </section>
+      )}
+
+      {dashboardData !== null && dashboardView !== null && (
         <>
-          <section className="metric-grid" aria-label="Race state summary">
+          <section className="metric-grid command-metrics" aria-label="Race state summary">
             <MetricCard
               label="Live cars"
               value={dashboardData.status.raceState.carCount}
@@ -152,7 +161,7 @@ function App() {
             <MetricCard
               label="Last update"
               value={formatDateTime(dashboardData.status.raceState.lastUpdate)}
-              detail={`last PID ${dashboardData.status.wige.lastMessagePid ?? "—"}`}
+              detail={`refreshed ${dashboardView.refreshedAtLabel}`}
             />
             <MetricCard
               label="WIGE messages"
@@ -161,89 +170,47 @@ function App() {
             />
           </section>
 
-          <section className="dashboard-grid">
+          <section className="dashboard-grid" aria-label="Live race dashboard panels">
             <article className="panel leaderboard-panel">
               <div className="panel-heading">
                 <p className="eyebrow">Timing snapshot</p>
-                <h2>Top five cars</h2>
+                <h2>Full field</h2>
+                <span className="panel-kicker">{dashboardView.leaderboardCars.length} cars</span>
               </div>
 
-              <div className="leaderboard-list">
-                {leadingCars.map((car) => (
-                  <div className="leaderboard-row" key={car.carNumber}>
-                    <span className="position">P{formatOptional(car.position)}</span>
-                    <div>
-                      <strong>#{car.carNumber}</strong>
-                      <p>{getCarTeamName(car)}</p>
-                    </div>
-                    <div className="row-meta">
-                      <span>{getCarModel(car)}</span>
-                      <span>Lap {formatOptional(car.lap)}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <LeaderboardTable
+                cars={dashboardView.leaderboardCars}
+                selectedCarNumber={dashboardView.selectedCarNumber}
+                onSelectCar={setSelectedCarNumber}
+              />
             </article>
 
-            <article className="panel diagnostics-panel">
+            <article className="panel map-panel">
               <div className="panel-heading">
-                <p className="eyebrow">Backend diagnostics</p>
-                <h2>API status</h2>
+                <div>
+                  <p className="eyebrow">Circuit reference</p>
+                  <h2>Nürburgring 24h layout</h2>
+                </div>
+                <span className="panel-kicker">Nordschleife + GP</span>
               </div>
 
-              <dl className="diagnostics-list">
-                <div>
-                  <dt>Metadata cars</dt>
-                  <dd>{dashboardData.status.metadata.count}</dd>
-                </div>
-                <div>
-                  <dt>Images</dt>
-                  <dd>{dashboardData.status.metadata.withImages}</dd>
-                </div>
-                <div>
-                  <dt>PID 0 packets</dt>
-                  <dd>{dashboardData.status.raceState.counters.pid0}</dd>
-                </div>
-                <div>
-                  <dt>Track state</dt>
-                  <dd>{dashboardData.status.raceState.hasTrackState ? "yes" : "no"}</dd>
-                </div>
-              </dl>
+              <TrackMap className="dashboard-track-map" />
             </article>
+
+            <MessagesPanel messages={dashboardView.recentMessages} />
+
+            <FeaturedCarPanel
+              car={dashboardView.featuredCar}
+              selectedCarNumber={selectedCarNumber}
+            />
+
+            <TrackStatePanel trackStateSummary={dashboardView.trackStateSummary} />
+
+            <DiagnosticsPanel status={dashboardData.status} />
           </section>
         </>
       )}
     </main>
-  );
-}
-
-type MetricCardProps = {
-  label: string;
-  value: string | number;
-  detail: string;
-};
-
-function MetricCard({ label, value, detail }: MetricCardProps) {
-  return (
-    <article className="metric-card">
-      <p>{label}</p>
-      <strong>{value}</strong>
-      <span>{detail}</span>
-    </article>
-  );
-}
-
-type StatusPillProps = {
-  label: string;
-  isConnected: boolean;
-};
-
-function StatusPill({ label, isConnected }: StatusPillProps) {
-  return (
-    <div className={isConnected ? "status-pill is-connected" : "status-pill"}>
-      <span aria-hidden="true" />
-      {label}: {isConnected ? "online" : "offline"}
-    </div>
   );
 }
 
