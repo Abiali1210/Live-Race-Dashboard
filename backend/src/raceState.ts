@@ -1,6 +1,16 @@
 import type { NormalizedWigeMessage } from "./normalizers.js";
 import type { RaceState, RaceStateCounters } from "./types.js";
 
+export type RaceStateSummary = {
+  connected: boolean;
+  lastUpdate: string | null;
+  carCount: number;
+  messageCount: number;
+  hasTrackState: boolean;
+  hasStats: boolean;
+  counters: RaceStateCounters;
+};
+
 function createInitialCounters(): RaceStateCounters {
   return {
     pid0: 0,
@@ -56,6 +66,18 @@ function incrementCounter(pid: NormalizedWigeMessage["pid"]): void {
 
 export function getRaceState(): RaceState {
   return structuredClone(raceState);
+}
+
+export function getRaceStateSummary(): RaceStateSummary {
+  return {
+    connected: raceState.connected,
+    lastUpdate: raceState.lastUpdate,
+    carCount: raceState.cars.length,
+    messageCount: raceState.messages.length,
+    hasTrackState: raceState.trackState !== null,
+    hasStats: raceState.stats !== null,
+    counters: { ...raceState.counters },
+  };
 }
 
 export function resetRaceState(): RaceState {

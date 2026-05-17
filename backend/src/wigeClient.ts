@@ -11,9 +11,41 @@ import type { WigeMessage } from "./types.js";
 
 const reconnectDelayMs = 5_000;
 
+export type WigeClientStatus = {
+  url: string;
+  subscribedPids: number[];
+  connected: boolean;
+  shouldReconnect: boolean;
+  reconnectDelayMs: number;
+  reconnectScheduled: boolean;
+  lastConnectAt: string | null;
+  lastSubscribeAt: string | null;
+  lastDisconnectAt: string | null;
+  lastCloseCode: number | null;
+  lastCloseReason: string | null;
+  lastError: string | null;
+  malformedMessageCount: number;
+};
+
 let socket: WebSocket | null = null;
 let reconnectTimer: NodeJS.Timeout | null = null;
 let shouldReconnect = false;
+
+const wigeClientStatus: Omit<
+  WigeClientStatus,
+  "connected" | "shouldReconnect" | "reconnectScheduled"
+> = {
+  url: config.livetimingWsUrl,
+  subscribedPids: [...config.livetimingPids],
+  reconnectDelayMs,
+  lastConnectAt: null,
+  lastSubscribeAt: null,
+  lastDisconnectAt: null,
+  lastCloseCode: null,
+  lastCloseReason: null,
+  lastError: null,
+  malformedMessageCount: 0,
+};
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -32,6 +64,7 @@ function rawDataToString(data: RawData): string {
 }
 
 function countMalformedMessage(reason: string): void {
+  wigeClientStatus.malformedMessageCount += 1;
   applyNormalizedWigeMessage({ pid: "MALFORMED", raw: {} });
   console.warn(`Ignored malformed WIGE message: ${reason}`);
 }
@@ -61,6 +94,7 @@ function sendSubscription(activeSocket: WebSocket): void {
   };
 
   activeSocket.send(JSON.stringify(subscription));
+  wigeClientStatus.lastSubscribeAt = new Date().toISOString();
 
   console.log(
     `WIGE websocket connected; subscribing to event ${config.eventId} pids ${config.livetimingPids.join(",")}`,
@@ -107,6 +141,8 @@ function connect(): void {
     }
 
     setRaceConnectionStatus(true);
+    wigeClientStatus.lastConnectAt = new Date().toISOString();
+    wigeClientStatus.lastError = null;
     sendSubscription(socket);
   });
 
@@ -120,13 +156,17 @@ function connect(): void {
     applyNormalizedWigeMessage(normalizeWigeMessage(parsedMessage));
   });
 
-  socket.on("close", () => {
+  socket.on("close", (code, reason) => {
     socket = null;
     setRaceConnectionStatus(false);
+    wigeClientStatus.lastDisconnectAt = new Date().toISOString();
+    wigeClientStatus.lastCloseCode = code;
+    wigeClientStatus.lastCloseReason = reason.toString("utf8") || null;
     scheduleReconnect();
   });
 
   socket.on("error", (error) => {
+    wigeClientStatus.lastError = error.message;
     console.warn(`WIGE websocket error: ${error.message}`);
   });
 }
@@ -149,4 +189,14 @@ export function stopWigeClient(): void {
   const activeSocket = socket;
   socket = null;
   activeSocket.close();
+}
+
+export function getWigeClientStatus(): WigeClientStatus {
+  return {
+    ...wigeClientStatus,
+    subscribedPids: [...wigeClientStatus.subscribedPids],
+    connected: socket?.readyState === WebSocket.OPEN,
+    shouldReconnect,
+    reconnectScheduled: reconnectTimer !== null,
+  };
 }

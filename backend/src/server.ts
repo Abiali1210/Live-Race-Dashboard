@@ -7,8 +7,8 @@ import {
   getMetadataSummary,
   loadEventhubMetadata,
 } from "./eventhubMetadata.js";
-import { getRaceState } from "./raceState.js";
-import { startWigeClient } from "./wigeClient.js";
+import { getRaceState, getRaceStateSummary } from "./raceState.js";
+import { getWigeClientStatus, startWigeClient } from "./wigeClient.js";
 
 const app = express();      // create express http server
 
@@ -33,6 +33,18 @@ app.get("/api/metadata", (_req, res) => {
 
 app.get("/api/state", (_req, res) => {
   res.json(getRaceState());
+});
+
+app.get("/api/status", (_req, res) => {
+  res.json({
+    ok: true,
+    service: "live-race-dash-backend",
+    eventId: config.eventId,
+    timestamp: new Date().toISOString(),
+    metadata: getMetadataSummary(),
+    wige: getWigeClientStatus(),
+    raceState: getRaceStateSummary(),
+  });
 });
 
 app.listen(config.port, () => {
