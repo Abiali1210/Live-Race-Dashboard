@@ -182,8 +182,7 @@ export function TrackMap({ className }: TrackMapProps) {
       </div>
 
       <figcaption className="track-map__caption">
-        <span>Static circuit reference. Live car GPS is not available.</span>
-        <span>Track outline © Pitlane02, Wikimedia Commons, CC BY-SA 3.0 / GFDL.</span>
+        Track outline © Pitlane02 / Wikimedia Commons / CC BY-SA 3.0
       </figcaption>
     </figure>
   );

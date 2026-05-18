@@ -71,8 +71,7 @@ export function LeaderboardControls({
       </label>
 
       <div className="leaderboard-filter-summary" aria-live="polite">
-        <strong>{filteredCarCount}</strong>
-        <span>of {totalCarCount} cars shown</span>
+        Showing {filteredCarCount}/{totalCarCount} cars
       </div>
 
       <button

@@ -32,6 +32,7 @@ export function FeaturedCarPanel({ car, selectedCarNumber }: FeaturedCarPanelPro
 
   const carImageUrl = getCarImageUrl(car);
   const drivers = getCarDrivers(car);
+  const driverSummary = drivers.length > 0 ? drivers.join(" / ") : "No driver metadata yet.";
 
   return (
     <article className="panel featured-panel">
@@ -41,17 +42,23 @@ export function FeaturedCarPanel({ car, selectedCarNumber }: FeaturedCarPanelPro
       </div>
 
       <div className="featured-car">
-        {carImageUrl !== null ? (
-          <img src={carImageUrl} alt={`Car ${car.carNumber}`} />
-        ) : (
-          <div className="featured-car__image-placeholder" aria-hidden="true">
-            No car image
+        <div className="featured-car__hero">
+          <div>
+            <strong>#{car.carNumber}</strong>
+            <p>{getCarTeamName(car)}</p>
+            <span>{getCarModel(car)}</span>
           </div>
-        )}
+
+          {carImageUrl !== null ? (
+            <img src={carImageUrl} alt={`Car ${car.carNumber}`} />
+          ) : (
+            <div className="featured-car__image-placeholder" aria-hidden="true">
+              No car image
+            </div>
+          )}
+        </div>
+
         <div className="featured-car__content">
-          <strong>#{car.carNumber}</strong>
-          <p>{getCarTeamName(car)}</p>
-          <span>{getCarModel(car)}</span>
           <dl className="featured-stats">
             <div>
               <dt>Position</dt>
@@ -76,29 +83,13 @@ export function FeaturedCarPanel({ car, selectedCarNumber }: FeaturedCarPanelPro
               <dd>{getCarDriverName(car)}</dd>
             </div>
             <div>
-              <dt>Team</dt>
-              <dd>{getCarTeamName(car)}</dd>
-            </div>
-            <div>
-              <dt>Entrant ID</dt>
-              <dd>{formatOptional(car.metadata?.entrantId)}</dd>
-            </div>
-            <div>
               <dt>Pit stops</dt>
               <dd>{formatOptional(car.pitStopCount)}</dd>
             </div>
           </dl>
           <div className="driver-list" aria-label={`Drivers for car ${car.carNumber}`}>
             <span>Drivers</span>
-            {drivers.length > 0 ? (
-              <ul>
-                {drivers.map((driver) => (
-                  <li key={driver}>{driver}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>No driver metadata yet.</p>
-            )}
+            <p>{driverSummary}</p>
           </div>
         </div>
       </div>
