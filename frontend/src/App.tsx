@@ -3,11 +3,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchRaceState, fetchStatus } from "./api/client";
 import type { ApiStatus, RaceState } from "./api/types";
 import { DiagnosticsPanel } from "./components/dashboard/DiagnosticsPanel";
+import { FeedStatusSummary } from "./components/dashboard/FeedStatusSummary";
 import { FeaturedCarPanel } from "./components/dashboard/FeaturedCarPanel";
 import { LeaderboardPanel } from "./components/dashboard/LeaderboardPanel";
 import { LoadingDashboard } from "./components/dashboard/LoadingDashboard";
 import { MessagesPanel } from "./components/dashboard/MessagesPanel";
-import { MetricCard } from "./components/dashboard/MetricCard";
 import { StatusPill } from "./components/dashboard/StatusPill";
 import { TrackStatePanel } from "./components/dashboard/TrackStatePanel";
 import { TrackMap } from "./components/TrackMap";
@@ -141,11 +141,20 @@ function App() {
         </div>
 
         <div className="connection-stack" aria-label="Connection summary">
-          <StatusPill label="Backend" isConnected={dashboardView?.backendConnected ?? false} />
-          <StatusPill
-            label="WIGE"
-            isConnected={dashboardView?.wigeConnected ?? false}
-          />
+          <div className="connection-pills">
+            <StatusPill label="Backend" isConnected={dashboardView?.backendConnected ?? false} />
+            <StatusPill
+              label="WIGE"
+              isConnected={dashboardView?.wigeConnected ?? false}
+            />
+          </div>
+
+          {dashboardData !== null && dashboardView !== null && (
+            <FeedStatusSummary
+              status={dashboardData.status}
+              refreshedAtLabel={dashboardView.refreshedAtLabel}
+            />
+          )}
         </div>
       </header>
 
@@ -187,30 +196,7 @@ function App() {
 
       {dashboardData !== null && dashboardView !== null && (
         <>
-          <section className="metric-grid command-metrics" aria-label="Race state summary">
-            <MetricCard
-              label="Live cars"
-              value={dashboardData.status.raceState.carCount}
-              detail={`${dashboardData.status.raceState.carsWithMetadata} with metadata`}
-            />
-            <MetricCard
-              label="Race messages"
-              value={dashboardData.status.raceState.messageCount}
-              detail="from WIGE PID 3"
-            />
-            <MetricCard
-              label="Last update"
-              value={formatDateTime(dashboardData.status.raceState.lastUpdate)}
-              detail={`refreshed ${dashboardView.refreshedAtLabel}`}
-            />
-            <MetricCard
-              label="WIGE messages"
-              value={dashboardData.status.wige.messageCount}
-              detail={`${dashboardData.status.wige.reconnectCount} reconnects`}
-            />
-          </section>
-
-          <section className="dashboard-grid" aria-label="Live race dashboard panels">
+          <section className="dashboard-primary" aria-label="Primary live race dashboard panels">
             <LeaderboardPanel
               availableClasses={dashboardView.availableClasses}
               filteredCars={dashboardView.filteredLeaderboardCars}
@@ -240,12 +226,14 @@ function App() {
               <TrackMap className="dashboard-track-map" />
             </article>
 
-            <MessagesPanel messages={dashboardView.recentMessages} />
-
             <FeaturedCarPanel
               car={dashboardView.featuredCar}
               selectedCarNumber={selectedCarNumber}
             />
+          </section>
+
+          <section className="dashboard-secondary" aria-label="Secondary race dashboard panels">
+            <MessagesPanel messages={dashboardView.recentMessages} />
 
             <TrackStatePanel trackStateSummary={dashboardView.trackStateSummary} />
 
