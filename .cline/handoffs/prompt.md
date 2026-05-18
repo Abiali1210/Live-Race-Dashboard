@@ -18,16 +18,17 @@ Before doing any implementation, please resume from the project handoff system a
 - If there is a `prompt.md`, treat it only as this reusable resume prompt, **not** as the main project handoff.
 - The current important handoff after this prompt update is likely:
   ```text
-  .cline/handoffs/2026-05-17-224100-chunk-15-leaderboard-controls.md
+  .cline/handoffs/2026-05-18-154300-chunk-17b3-polish.md
   ```
 - If a newer timestamped handoff exists, read that newer handoff first instead.
 - If the latest handoff chains from an older one, only read older handoffs if needed for deeper context.
+- Note: the handoff above incorporates pasted previous-chat context that superseded older written handoffs.
 
 ## 2. Use the session handoff workflow
 
 - If a `session-handoff` skill is available, activate/use it.
 - Follow the project rules in `.clinerules/`, especially handoff-related rules.
-- Treat the latest handoff as the source of truth for project context, decisions, current progress, and next steps.
+- Treat the latest timestamped handoff as the source of truth for project context, decisions, current progress, and next steps.
 - After meaningful progress, create a new chained handoff in `.cline/handoffs/`.
 
 ## 3. Understand the project context before acting
@@ -41,7 +42,7 @@ Before doing any implementation, please resume from the project handoff system a
   ```
 - The frontend should not connect directly to WIGE/Eventhub for the MVP.
 - The backend should centralize reconnect logic, parsing, caching/snapshot loading, normalization, and external API politeness.
-- Frontend Milestone 2 is now underway. The frontend scaffold and backend API client already exist.
+- Frontend Milestone 2 is underway and has progressed through Chunk 17B.3 dashboard polish.
 
 ## 4. Respect the established technical decisions
 
@@ -84,14 +85,16 @@ Before doing any implementation, please resume from the project handoff system a
   npm run build
   npm run lint
   ```
-- If project files differ from the handoff, report the discrepancy and ask or reason carefully before editing.
+- If project files differ from the latest handoff, report the discrepancy and ask or reason carefully before editing.
+- For small CSS polish work, prefer targeted selector searches/snippet reads over rereading the entire large `frontend/src/App.css` file.
 
-## 6. Continue from the handoff's exact next step
+## 6. Continue from the latest handoff's exact next step
 
 - Start from the latest handoff’s **Immediate Next Steps** section.
 - Do not skip ahead to later milestones unless I explicitly ask.
 - Work in small chunks that can be implemented and tested independently.
-- Current next implementation area should be taken from the latest handoff’s **Immediate Next Steps** section. Chunk 13 is complete.
+- Current implementation area should be taken from the latest handoff. As of this prompt update, Chunk 17B.3 polish is complete and verified; the likely next step is visual browser QA, then 17B.4 responsive cleanup only if needed.
+- Do not restructure the dashboard again unless explicitly requested.
 
 ## 7. Current known status at the time this prompt was updated
 
@@ -140,67 +143,72 @@ GET /api/state
 GET /api/status
 ```
 
-Frontend Milestone 2 chunks 11–12 are complete.
+Frontend Milestone 2 chunks 11–17B.3 are complete or in the working tree.
 
 - Chunk 11 — React + TypeScript + Vite frontend scaffold.
 - Chunk 12 — frontend API client and temporary data preview:
   - added `frontend/src/api/types.ts`
   - added `frontend/src/api/client.ts`
   - added `frontend/.env.example`
-  - replaced default Vite UI with a temporary API-connected preview in `frontend/src/App.tsx`
-  - frontend polls `/api/status` and `/api/state` every `5000ms`
-  - build and lint passed at completion of Chunk 12.
-
-Frontend Chunk 13 is complete.
-
-- Chunk 13A — track map component foundation:
-  - added `frontend/src/components/TrackMap.tsx`
-  - added `frontend/src/components/TrackMap.css`
-  - uses local SVG source `frontend/Circuit_Nürburgring-2002-24h.svg`
-  - renders inline SVG with curated labels, attribution, no-GPS note, hover/focus glow, and reduced-motion support
-  - frontend build/lint passed.
-- Chunk 13B — app data/state cleanup:
-  - updated `frontend/src/App.tsx`
-  - preserves last successful data if a later refresh fails
-  - initial load failure still shows blocking backend error
-  - tracks last successful frontend refresh time
-  - derives `dashboardView` with leaderboard cars, featured car, recent messages, connection labels, and refresh label
-  - frontend build/lint passed.
-- Chunk 13C — map-led dashboard layout:
-  - mounted `TrackMap` in `App.tsx`
-  - replaced the temporary preview with a command/header area, metrics, and dashboard grid
-  - frontend build/lint passed.
-- Chunk 13D — first read-only panels:
-  - changed leaderboard from top 15 to all received cars
-  - added structured full-field table columns, featured car, track state, messages, and diagnostics panels
-  - adjusted layout so the leaderboard is the primary live data surface and the static map is slightly less dominant
-  - frontend build/lint passed.
-- Chunk 13E — styling and verification:
-  - polished race-control dashboard styling, table density, empty states, accessibility labels, responsive breakpoints, and map glow
-  - added OKLCH semantic tokens and `color-scheme: dark`
-  - frontend build/lint passed.
-
-Frontend Chunk 14 is complete.
-
+  - frontend polls `/api/status` and `/api/state` every `5000ms`.
+- Chunk 13 — read-only dashboard shell:
+  - added `TrackMap` using local `frontend/Circuit_Nürburgring-2002-24h.svg`
+  - converted the temporary preview into a dashboard with command/header area, leaderboard, map, selected car, track state, messages, and diagnostics panels
+  - polished race-control styling with dark UI, semantic OKLCH tokens, responsive behavior, and accessibility details.
 - Chunk 14 — component extraction / maintainability:
   - added `frontend/src/dashboard/formatters.ts`
   - added `frontend/src/dashboard/carHelpers.ts`
   - extracted dashboard components under `frontend/src/components/dashboard/`
-  - simplified `frontend/src/App.tsx` so it orchestrates polling, selected-car state, derived dashboard data, and component composition
-  - preserved local-backend-only data flow and selected-car behavior
-  - frontend build/lint passed.
-
-Frontend Chunk 15 is complete.
-
+  - simplified `frontend/src/App.tsx` so it orchestrates polling, selected-car state, derived dashboard data, and component composition.
 - Chunk 15 — leaderboard controls and selected-car UX hardening:
-  - added local frontend search across car number, class, team, drivers, and car/model text
-  - added class dropdown derived from current timing data
-  - added compact sort dropdown for live position, car number, class, team, lap count, best lap, and last lap
+  - added local search across car number, class, team, drivers, and car/model text
+  - added class dropdown derived from timing data
+  - added sort dropdown for live position, car number, class, team, lap count, best lap, and last lap
   - preserved selected-car behavior under search/filter/sort
-  - added warning when selected car is hidden by search/class filters
-  - added clearer filtered empty state with reset filters action
-  - added `frontend/src/components/dashboard/LeaderboardPanel.tsx`
-  - frontend build/lint passed.
+  - added hidden-selected-car warning and filtered empty state with reset filters action
+  - added `frontend/src/components/dashboard/LeaderboardPanel.tsx`.
+- Chunk 16 — frontend hardening/polish:
+  - see latest handoff chain for exact details if needed.
+- Chunk 17A — compact header feed status:
+  - demoted large metric strip into compact `FeedStatusSummary` near Backend/WIGE connection pills.
+- Chunk 17B.1 / 17B.2 — viewer-first dashboard ordering and layout:
+  - primary dashboard now prioritizes leaderboard, circuit map, and selected car
+  - secondary panels live below the main dashboard.
+- Chunk 17B.3 — final dashboard polish:
+  - accepted structure:
+    ```text
+    Compact header/status toolbar
+    Primary dashboard: leaderboard left, circuit map + selected car right
+    Secondary section below: Race Control/messages, Track State, Backend Diagnostics
+    ```
+  - final CSS polish in `frontend/src/App.css` tightened leaderboard scrollbars, selected-car image ratio, map attribution spacing, and map vertical placement
+  - verification passed after final polish:
+    ```powershell
+    cd frontend
+    npm run build
+    npm run lint
+    ```
+
+Important current frontend files:
+
+```text
+frontend/src/App.tsx
+frontend/src/App.css
+frontend/src/components/TrackMap.tsx
+frontend/src/components/TrackMap.css
+frontend/src/components/dashboard/FeedStatusSummary.tsx
+frontend/src/components/dashboard/FeaturedCarPanel.tsx
+frontend/src/components/dashboard/LeaderboardControls.tsx
+frontend/src/components/dashboard/LeaderboardPanel.tsx
+frontend/src/components/dashboard/LeaderboardTable.tsx
+frontend/src/components/dashboard/LoadingDashboard.tsx
+frontend/src/components/dashboard/MessagesPanel.tsx
+frontend/src/components/dashboard/TrackStatePanel.tsx
+frontend/src/components/dashboard/DiagnosticsPanel.tsx
+frontend/src/dashboard/carHelpers.ts
+frontend/src/dashboard/formatters.ts
+frontend/src/dashboard/leaderboardFilters.ts
+```
 
 Additional current assets:
 
@@ -219,55 +227,33 @@ Additional current assets:
   ```
 - The recorder may be running in the user’s background terminal. Do not interrupt it, delete `backend/playback/`, or run commands that kill Node/npm processes.
 
-## 8. Current Chunk 13 plan summary
+## 8. Current Chunk 17 design direction
 
-Chunk 13 should convert the temporary frontend preview into a real read-only dashboard shell.
+The dashboard should behave like a product/race-control dashboard, not a marketing page and not a long generic webpage.
 
-Approved design direction:
+Accepted design and layout direction:
 
-- Product dashboard UI, not marketing page.
 - Dark race-control scene: a race viewer watches a long endurance race on a large monitor in a dim room.
 - Restrained tactical color system with semantic accents.
-- The Nürburgring track map should be a large visual anchor, not a small side widget.
-- The map should have a subtle hover/focus glow.
-- The map must not show fake live car GPS or imply real track positions.
+- Main first-viewport race-view components:
+  1. leaderboard / timing table
+  2. circuit map
+  3. selected car summary
+- Secondary panels should remain below the main dashboard and readable:
+  - Race Control/messages
+  - Track State
+  - Backend Diagnostics
+- Do not force every panel into one viewport if it harms readability.
+- The leaderboard should be the dominant live-data surface and should scroll internally.
+- The selected-car card may scroll internally if needed, but should be compact and useful at a glance.
+- The map must stay fully contained in its card and must not imply live car GPS.
+- Keep track attribution visible but tiny and unobtrusive.
 
-Planned sub-parts:
+Recent polish decisions:
 
-1. **13A — Track map component foundation**
-   - Create a dedicated React `TrackMap` component from `frontend/Circuit_Nürburgring-2002-24h.svg`.
-   - Use inline SVG, preserve the `viewBox`, simplify cluttered labels, add attribution.
-   - Add subtle hover/focus glow and respect reduced motion.
-   - Status: complete.
-
-2. **13B — App data/state cleanup**
-   - Preserve existing local backend polling.
-   - Keep stale data visible if later refresh fails.
-   - Derive leading car, leaderboard cars, recent messages, connection labels, and last update display.
-   - Status: complete.
-
-3. **13C — Map-led dashboard layout**
-   - Replace temporary preview with a command/status bar and dashboard grid.
-   - Make the track map the largest single visual panel.
-   - Stack gracefully on narrow screens.
-   - Status: complete.
-
-4. **13D — First read-only panels**
-   - Command/status bar.
-   - Leaderboard.
-   - Track map panel.
-   - Featured/leading car panel.
-   - Track state panel.
-   - Recent race messages panel.
-   - Diagnostics panel.
-   - Status: complete.
-
-5. **13E — Styling and verification**
-   - Replace temporary CSS with intentional race-control dashboard styling.
-   - Use semantic variables and OKLCH colors where practical.
-   - Run `npm run build` and `npm run lint` in `frontend`.
-   - Create a new chained handoff after implementation.
-   - Status: complete.
+- Leaderboard scrollbars are intentionally very subtle: red/accent, `2px` WebKit scrollbars, transparent track, low-opacity by default, more visible on hover/focus.
+- Selected-car actual image uses intrinsic aspect ratio (`height: auto`) with a `max-height` cap to avoid top/bottom blank bars.
+- Map stage/caption spacing is tightened so the SVG gets more space while remaining contained.
 
 ## 9. Important current gotchas
 
@@ -278,12 +264,15 @@ Planned sub-parts:
 - Frontend should poll or subscribe to the local backend only, not WIGE/Eventhub directly.
 - `TimingCar.metadata` is populated when a matching Eventhub car number exists; `/api/status.raceState.carsWithoutMetadata` reveals misses.
 - Frontend API types are manually mirrored from backend shapes. If backend response shapes change, update frontend types too.
-- The local track SVG carries licensing obligations. Include attribution such as:
+- The local track SVG carries licensing obligations. Keep attribution such as:
   ```text
-  Track outline © Pitlane02, Wikimedia Commons, CC BY-SA 3.0 / GFDL
+  Track outline © Pitlane02 / Wikimedia Commons / CC BY-SA 3.0
   ```
 - There are untracked local `.cline/skills/` files and `skills-lock.json`; do not commit them unless explicitly intended.
 - A WIGE recorder may be running in the background. Avoid interrupting it.
+- Current working tree likely contains uncommitted Chunk 17 frontend work and handoff files. Check `git status --short` before editing.
+- `MetricCard.tsx` may remain modified even though the current dashboard no longer centers on large metric cards. Do not delete/revert it without checking intent.
+- `frontend/src/components/TrackMap.tsx` may have line-ending warnings (`LF will be replaced by CRLF`) when Git touches it.
 
 ## 10. Communication style I want
 
@@ -294,10 +283,11 @@ Planned sub-parts:
   - how it was tested
   - what remains next
 - Keep work focused and avoid unnecessary refactors.
+- For UI polish, avoid broad redesigns unless explicitly requested. Prefer narrow, targeted edits.
 
 ## 11. Handoff discipline
 
-- After meaningful progress, create a new chained handoff in `.cline/handoffs/`.
+- After meaningful progress, create or update a chained handoff in `.cline/handoffs/`.
 - Include current state, decisions, next steps, critical files, and gotchas.
 - Keep handoffs concise but complete enough for another agent to continue.
 - Prefer newest timestamped handoff as source of truth over this reusable prompt if there is any conflict.
