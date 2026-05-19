@@ -64,7 +64,7 @@
 
 .track-map__grid path {
   stroke: var(--track-map-grid);
-  stroke-width: 0.75;
+  stroke-width: 0.7;
   vector-effect: non-scaling-stroke;
 }
 
@@ -72,7 +72,7 @@
   stroke: var(--track-map-line-muted);
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.58;
+  opacity: 0.6;
   vector-effect: non-scaling-stroke;
 }
 
@@ -85,15 +85,15 @@
 
 .track-map__halo {
   stroke: oklch(78% 0.16 88 / 0.34);
-  stroke-width: 13;
-  opacity: 0.26;
+  stroke-width: 9.6;
+  opacity: 0.25;
   filter: url("#track-map-glow");
   transition: opacity var(--motion-base, 220ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
 }
 
 .track-map__outline {
   stroke: var(--track-map-line);
-  stroke-width: 4.8;
+  stroke-width: 2.5;
   filter: drop-shadow(0 0 4px oklch(80% 0.12 88 / 0.22));
   transition:
     stroke var(--motion-base, 220ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
@@ -109,29 +109,39 @@
 .track-map__stage:hover .track-map__outline,
 .track-map__stage:focus-visible .track-map__outline {
   stroke: var(--track-map-accent);
-  stroke-width: 5.6;
+  stroke-width: 3.5;
   filter: drop-shadow(0 0 8px oklch(80% 0.14 88 / 0.36));
 }
 
 .track-map__direction-markers path {
   fill: oklch(63% 0.2 29);
-  opacity: 0.78;
+  opacity: 1;
 }
 
 .track-map__start-finish path {
-  opacity: 0.86;
+  opacity: 1;
 }
 
 .track-map__labels text {
   fill: var(--track-map-copy);
   font-family: var(--mono, "SFMono-Regular", Consolas, monospace);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   paint-order: stroke;
   stroke: oklch(14% 0.012 240 / 0.78);
-  stroke-width: 4px;
+  stroke-width: 9px;
   text-transform: uppercase;
+}
+
+.track-map__labels g:hover text {
+  font-weight: 800;
+  fill: #ffffff;
+  filter: drop-shadow(0 0 4px var(--accent, #ffcc00));
+  transition: all 0.2ms ease-in-out; 
+}
+.track-map__labels text {
+  transition: all 0.2ms ease-in-out;
 }
 
 .track-map__caption {
@@ -169,6 +179,6 @@
   .track-map__stage,
   .track-map__halo,
   .track-map__outline {
-    transition-duration: 0.01ms;
+    transition-duration: 500ms;
   }
 }
