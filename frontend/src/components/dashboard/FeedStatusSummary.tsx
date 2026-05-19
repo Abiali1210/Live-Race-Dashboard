@@ -5,6 +5,10 @@ type FeedStatusSummaryProps = {
   refreshedAtLabel: string;
 };
 
+function formatTimingSource(source: ApiStatus["timingSource"]): string {
+  return source === "playback" ? "Playback" : "Live";
+}
+
 export function FeedStatusSummary({ status, refreshedAtLabel }: FeedStatusSummaryProps) {
   return (
     <aside className="feed-status-summary" aria-label="Feed status summary">
@@ -17,6 +21,10 @@ export function FeedStatusSummary({ status, refreshedAtLabel }: FeedStatusSummar
         <div>
           <dt>Messages</dt>
           <dd>{status.raceState.messageCount}</dd>
+        </div>
+        <div>
+          <dt>Source</dt>
+          <dd>{formatTimingSource(status.timingSource)}</dd>
         </div>
         <div>
           <dt>Refreshed</dt>

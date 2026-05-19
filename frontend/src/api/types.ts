@@ -117,6 +117,7 @@ export type ApiStatus = {
   service: string;
   eventId: number;
   timestamp: string;
+  timingSource: "live" | "playback";
   metadata: MetadataSummary;
   wige: WigeClientStatus;
   raceState: RaceStateSummary;
