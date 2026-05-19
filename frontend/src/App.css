@@ -130,13 +130,14 @@ h2 {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .feed-status-summary dl {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, auto));
-  justify-content: end;
-  gap: 5px 11px;
+  grid-template-columns: repeat(5, minmax(0, auto));
+  justify-content: center;
+  gap: 5px 28px;
   margin: 0;
 }
 
@@ -269,6 +270,7 @@ dt {
   grid-area: map;
   grid-template-rows: auto minmax(0, 1fr);
   overflow: hidden;
+  padding-bottom: 9.5px;
 }
 
 .featured-panel {
@@ -334,7 +336,7 @@ dt {
   grid-template-rows: minmax(0, 1fr) auto;
   align-self: stretch;
   min-height: 0;
-  margin-top: 4px;
+  margin-top: 5px;
   overflow: hidden;
 }
 
@@ -352,24 +354,24 @@ dt {
   min-height: 0;
   max-height: none;
   overflow: visible;
-  transform: translateY(1.5px) scale(1.14);
+  transform: translateY(17px) scale(1.22);
   transform-origin: center;
 }
 
 .dashboard-track-map .track-map__caption {
   gap: 2px 6px;
-  margin-top: 1px;
-  font-size: 0.56rem;
+  margin-top: 0px;
+  font-size: 0.6rem;
   letter-spacing: 0.05em;
-  line-height: 1.05;
-  opacity: 0.5;
+  line-height: 0.55;
+  opacity: 1;
 }
 
 .leaderboard-controls {
   display: grid;
   grid-template-columns: minmax(260px, 1fr) minmax(150px, 0.34fr) minmax(150px, 0.34fr) auto auto;
   align-items: end;
-  gap: 12px;
+  gap: 15px;
   margin-top: 12px;
 }
 
@@ -479,7 +481,7 @@ dt {
 .leaderboard-table-wrap {
   position: relative;
   min-height: 0;
-  margin-top: 12px;
+  margin-top: 8px;
   overflow: auto;
   background: var(--border);
   scrollbar-color: color-mix(in oklch, var(--accent) 34%, transparent) transparent;
@@ -840,7 +842,7 @@ dt {
   padding: 3px 7px;
   color: var(--text-muted);
   font-size: 0.68rem;
-  font-weight: 800;
+  font-weight: 600;
   transition:
     border-color var(--motion-base) var(--ease-out),
     color var(--motion-base) var(--ease-out),
@@ -859,7 +861,7 @@ dt {
 
 .pit-status--unknown {
   border-color: var(--border);
-  color: var(--text-muted);
+  color: var(--danger);
 }
 
 .message-list {

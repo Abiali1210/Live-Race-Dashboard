@@ -144,7 +144,7 @@ function App() {
           <div className="connection-pills">
             <StatusPill label="Backend" isConnected={dashboardView?.backendConnected ?? false} />
             <StatusPill
-              label="WIGE"
+              label="LIVE STREAM"
               isConnected={dashboardView?.wigeConnected ?? false}
             />
           </div>
@@ -218,7 +218,7 @@ function App() {
               <div className="panel-heading">
                 <div>
                   <p className="eyebrow">Circuit reference</p>
-                  <h2>Nürburgring 24h layout</h2>
+                  <h2>Nürburgring 24h Layout</h2>
                 </div>
                 <span className="panel-kicker">Nordschleife + GP</span>
               </div>
