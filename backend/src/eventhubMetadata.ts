@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { getLocalCarImageUrl } from "./localAssets.js";
 import type { CarMetadata, MetadataByCarNumber } from "./types.js";
 
 export type MetadataLoadResult = {
@@ -84,6 +85,8 @@ function normalizeEntrylistItem(entry: unknown): CarMetadata | null {
     return null;
   }
 
+  const localCarImageUrl = getLocalCarImageUrl(carNumber);
+
   return {
     carNumber,
     entrantId: getStringOrNull(entry.id),
@@ -93,8 +96,8 @@ function normalizeEntrylistItem(entry: unknown): CarMetadata | null {
     make: getStringOrNull(entry.car_make),
     model: null,
     drivers: normalizeDriverNames(entry.drivers),
-    carshotUrl: getStringOrNull(entry.carshot_url),
-    carshotUrlFull: getStringOrNull(entry.carshot_url_full),
+    carshotUrl: localCarImageUrl,
+    carshotUrlFull: localCarImageUrl,
     headshotUrls: normalizeHeadshotUrls(entry.drivers),
   };
 }

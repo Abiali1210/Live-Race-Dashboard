@@ -7,6 +7,7 @@ import {
   getMetadataSummary,
   loadEventhubMetadata,
 } from "./eventhubMetadata.js";
+import { carImagesDirectory } from "./localAssets.js";
 import { getPlaybackClientStatus, loadWigePlayback } from "./playbackClient.js";
 import { getRaceState, getRaceStateSummary } from "./raceState.js";
 import { getWigeClientStatus, startWigeClient, stopWigeClient } from "./wigeClient.js";
@@ -15,6 +16,14 @@ const app = express();      // create express http server
 
 app.use(cors());            
 app.use(express.json());    // for parsing application/json
+
+app.use(
+  "/assets/cars",
+  express.static(carImagesDirectory, {
+    immutable: true,
+    maxAge: "30d",
+  }),
+);
 
 app.get("/health", (_req, res) => {
   res.json({

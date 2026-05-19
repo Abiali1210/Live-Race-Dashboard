@@ -1,0 +1,1628 @@
+{
+  "createdAt": "2026-05-19T18:26:42.645Z",
+  "sourceSnapshot": "backend/data/bootstrap",
+  "outputDirectory": "backend/data/car-images",
+  "sourceField": "carshot_url",
+  "dryRun": false,
+  "force": false,
+  "totalEntries": 161,
+  "validEntries": 161,
+  "downloaded": 161,
+  "skippedExisting": 0,
+  "invalid": 0,
+  "failed": 0,
+  "images": {
+    "1": {
+      "file": "1.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 76298,
+      "teamName": "ROWE RACING",
+      "className": "SP 9"
+    },
+    "3": {
+      "file": "3.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 74170,
+      "teamName": "Mercedes-AMG Team Verstappen Racing",
+      "className": "SP 9"
+    },
+    "4": {
+      "file": "4.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 75152,
+      "teamName": "Goroyan RT by Car Collection",
+      "className": "SP 9"
+    },
+    "5": {
+      "file": "5.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 72072,
+      "teamName": "BLACK FALCON Team EAE",
+      "className": "SP 9"
+    },
+    "7": {
+      "file": "7.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzcuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 77644,
+      "teamName": "Konrad Motorsport",
+      "className": "SP 9"
+    },
+    "8": {
+      "file": "8.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1ODAsImhlaWdodCI6MzI2LCJmaXQiOiJjb3ZlciJ9fX0=",
+      "contentType": "image/webp",
+      "bytes": 75804,
+      "teamName": "JUTA Racing",
+      "className": "SP 9"
+    },
+    "10": {
+      "file": "10.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 74540,
+      "teamName": "Max Kruse Racing",
+      "className": "SP 3T"
+    },
+    "11": {
+      "file": "11.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzExLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 72784,
+      "teamName": "SR Motorsport by Schnitzelalm",
+      "className": "SP 9"
+    },
+    "13": {
+      "file": "13.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 80822,
+      "teamName": "White Angel for Fly and Help",
+      "className": "Cup 2"
+    },
+    "16": {
+      "file": "16.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 74594,
+      "teamName": "Scherer Sport PHX",
+      "className": "SP 9"
+    },
+    "17": {
+      "file": "17.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 74668,
+      "teamName": "Dunlop Motorsport",
+      "className": "SP 9"
+    },
+    "18": {
+      "file": "18.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69300,
+      "teamName": "Lionspeed GP",
+      "className": "SP 9"
+    },
+    "19": {
+      "file": "19.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73236,
+      "teamName": "Max Kruse Racing",
+      "className": "AT1"
+    },
+    "24": {
+      "file": "24.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzI0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69512,
+      "teamName": "Lionspeed GP",
+      "className": "SP 9"
+    },
+    "26": {
+      "file": "26.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzI2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 76840,
+      "teamName": "PROsport racing",
+      "className": "SP 9"
+    },
+    "30": {
+      "file": "30.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 70762,
+      "teamName": "Hankook Competition",
+      "className": "SP 9"
+    },
+    "32": {
+      "file": "32.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 76636,
+      "teamName": "Toyo Tires with Ring Racing",
+      "className": "SP 9"
+    },
+    "33": {
+      "file": "33.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 75756,
+      "teamName": "KKrämer Racing",
+      "className": "SP 9"
+    },
+    "34": {
+      "file": "34.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69088,
+      "teamName": "natural elements by Walkenhorst Motorsport",
+      "className": "SP 9"
+    },
+    "35": {
+      "file": "35.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69390,
+      "teamName": "Walkenhorst Motorsport",
+      "className": "SP 9"
+    },
+    "36": {
+      "file": "36.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 81196,
+      "teamName": "Saugmotoren Motorsport | 3M",
+      "className": "SP 9"
+    },
+    "37": {
+      "file": "37.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 70780,
+      "teamName": "PROsport racing",
+      "className": "SP 9"
+    },
+    "39": {
+      "file": "39.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 68466,
+      "teamName": "Walkenhorst Motorsport",
+      "className": "SP 9"
+    },
+    "40": {
+      "file": "40.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73858,
+      "teamName": "W.I.S Racing Team powered by Koopman Racing",
+      "className": "SP 9"
+    },
+    "44": {
+      "file": "44.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71470,
+      "teamName": "Falken Motorsports",
+      "className": "SP 9"
+    },
+    "45": {
+      "file": "45.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73202,
+      "teamName": "REALIZE KONDO RACING with Rinaldi",
+      "className": "SP 9"
+    },
+    "47": {
+      "file": "47.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73290,
+      "teamName": "KCMG",
+      "className": "SP 9"
+    },
+    "48": {
+      "file": "48.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71872,
+      "teamName": "48 LOSCH Motorsport by BLACK FALCON",
+      "className": "SP 9"
+    },
+    "50": {
+      "file": "50.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 70912,
+      "teamName": "Max Kruse Racing",
+      "className": "SP 4T"
+    },
+    "54": {
+      "file": "54.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzU0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73046,
+      "teamName": "Dinamic GT",
+      "className": "SP 9"
+    },
+    "55": {
+      "file": "55.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzU1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 74324,
+      "teamName": "Dinamic GT",
+      "className": "SP 9"
+    },
+    "59": {
+      "file": "59.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzU5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73666,
+      "teamName": "Doerr Motorsport",
+      "className": "SP 8T"
+    },
+    "61": {
+      "file": "61.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzYxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 76060,
+      "teamName": "HWA Engineering Speed",
+      "className": "SP-X"
+    },
+    "62": {
+      "file": "62.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzYyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73046,
+      "teamName": "HWA Engineering Speed",
+      "className": "SP-X"
+    },
+    "63": {
+      "file": "63.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzYzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 76948,
+      "teamName": "HWA Engineering Speed",
+      "className": "SP-X"
+    },
+    "64": {
+      "file": "64.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71936,
+      "teamName": "HRT Ford Racing",
+      "className": "SP 9"
+    },
+    "65": {
+      "file": "65.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69672,
+      "teamName": "HRT Ford Racing",
+      "className": "SP 9"
+    },
+    "66": {
+      "file": "66.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 69084,
+      "teamName": "Reiter Engineering",
+      "className": "SP-X"
+    },
+    "67": {
+      "file": "67.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73402,
+      "teamName": "HRT Ford Racing",
+      "className": "SP 9"
+    },
+    "69": {
+      "file": "69.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 78178,
+      "teamName": "Doerr Motorsport",
+      "className": "SP 9"
+    },
+    "71": {
+      "file": "71.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzcxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71686,
+      "teamName": "JUTA Racing",
+      "className": "SP 9"
+    },
+    "75": {
+      "file": "75.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71786,
+      "teamName": "Max Kruse Racing",
+      "className": "AT1"
+    },
+    "76": {
+      "file": "76.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 68556,
+      "teamName": "Max Kruse Racing",
+      "className": "SP 4T"
+    },
+    "77": {
+      "file": "77.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 75280,
+      "teamName": "Schubert Motorsport",
+      "className": "SP 9"
+    },
+    "80": {
+      "file": "80.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 76518,
+      "teamName": "Mercedes-AMG Team RAVENOL",
+      "className": "SP 9"
+    },
+    "81": {
+      "file": "81.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 67476,
+      "teamName": "BMW M Motorsport",
+      "className": "SP-X"
+    },
+    "82": {
+      "file": "82.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 77524,
+      "teamName": "OVERTAKERACING x tm-racing.org",
+      "className": "SP 7"
+    },
+    "84": {
+      "file": "84.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71630,
+      "teamName": "Red Bull Team ABT",
+      "className": "SP 9"
+    },
+    "86": {
+      "file": "86.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73726,
+      "teamName": "High Class Racing",
+      "className": "SP 9"
+    },
+    "88": {
+      "file": "88.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73274,
+      "teamName": "SUBARU TECNICA INTERNATIONAL",
+      "className": "SP 4T"
+    },
+    "89": {
+      "file": "89.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 75140,
+      "teamName": "KMA-Racing",
+      "className": "TCR"
+    },
+    "90": {
+      "file": "90.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 73102,
+      "teamName": "Teichmann Racing",
+      "className": "SP 10"
+    },
+    "91": {
+      "file": "91.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 72706,
+      "teamName": "Reiter Engineering",
+      "className": "SP 7"
+    },
+    "95": {
+      "file": "95.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 71648,
+      "teamName": "Sante Royal Racing Team",
+      "className": "Cup 2"
+    },
+    "99": {
+      "file": "99.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTgwLCJoZWlnaHQiOjMyNiwiZml0IjoiY292ZXIifX19",
+      "contentType": "image/webp",
+      "bytes": 75292,
+      "teamName": "ROWE RACING",
+      "className": "SP 9"
+    },
+    "100": {
+      "file": "100.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEwMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75254,
+      "teamName": "Pistorius by EiFelkind Racing",
+      "className": "BMW 325i"
+    },
+    "101": {
+      "file": "101.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEwMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75536,
+      "teamName": "EiFelkind Racing",
+      "className": "BMW 325i"
+    },
+    "108": {
+      "file": "108.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEwOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 65888,
+      "teamName": "asBest Racing",
+      "className": "BMW 325i"
+    },
+    "109": {
+      "file": "109.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69124,
+      "teamName": "TOYOTA GAZOO ROOKIE Racing",
+      "className": "SP 2T"
+    },
+    "110": {
+      "file": "110.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzExMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68404,
+      "teamName": "TOYOTA GAZOO ROOKIE Racing",
+      "className": "SP 2T"
+    },
+    "112": {
+      "file": "112.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzExMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74604,
+      "teamName": "JS Competition",
+      "className": "BMW 325i"
+    },
+    "123": {
+      "file": "123.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEyMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70972,
+      "teamName": "Mühlner Motorsport powered by H&R",
+      "className": "SP 9"
+    },
+    "130": {
+      "file": "130.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzEzMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74884,
+      "teamName": "Red Bull Team ABT",
+      "className": "SP 9"
+    },
+    "145": {
+      "file": "145.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE0NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72878,
+      "teamName": "Riller & Schnauck powered by Cerny Motorsport",
+      "className": "SP 10"
+    },
+    "146": {
+      "file": "146.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE0Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71748,
+      "teamName": "GITI TIRE MOTORSPORT BY WS RACING",
+      "className": "AT2"
+    },
+    "152": {
+      "file": "152.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE1Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 67606,
+      "teamName": "Oepen Motors Automobilsport",
+      "className": "SP 4"
+    },
+    "164": {
+      "file": "164.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE2NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69746,
+      "teamName": "W&S Motorsport",
+      "className": "SP 10"
+    },
+    "169": {
+      "file": "169.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE2OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 63224,
+      "teamName": "Doerr Motorsport",
+      "className": "SP 10"
+    },
+    "170": {
+      "file": "170.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72514,
+      "teamName": "Toyo Tires with Ring Racing",
+      "className": "SP 10"
+    },
+    "171": {
+      "file": "171.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70740,
+      "teamName": "BSL Racing Team",
+      "className": "SP 10"
+    },
+    "175": {
+      "file": "175.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74076,
+      "teamName": "PROsport racing",
+      "className": "SP 10"
+    },
+    "176": {
+      "file": "176.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74418,
+      "teamName": "PROsport racing",
+      "className": "SP 10"
+    },
+    "177": {
+      "file": "177.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71952,
+      "teamName": "AV Racing by BLACK FALCON",
+      "className": "SP 10"
+    },
+    "180": {
+      "file": "180.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72878,
+      "teamName": "AV Racing by BLACK FALCON",
+      "className": "SP 10"
+    },
+    "187": {
+      "file": "187.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE4Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72310,
+      "teamName": "FK Performance Motorsport",
+      "className": "SP 10"
+    },
+    "189": {
+      "file": "189.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE4OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69496,
+      "teamName": "Hofor Racing by Bonk Motorsport",
+      "className": "SP 10"
+    },
+    "195": {
+      "file": "195.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzE5NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74352,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW M240i"
+    },
+    "277": {
+      "file": "277.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzI3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 82456,
+      "teamName": "RAVENOL Motorsport by MDM Racing",
+      "className": "SP 3"
+    },
+    "300": {
+      "file": "300.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMwMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70848,
+      "teamName": "Ollis Garage Racing",
+      "className": "SP 3T"
+    },
+    "302": {
+      "file": "302.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMwMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 79988,
+      "teamName": "Hyundai Motorsport N",
+      "className": "SP 4T"
+    },
+    "303": {
+      "file": "303.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMwMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 80036,
+      "teamName": "Hyundai Motorsport N",
+      "className": "SP 4T"
+    },
+    "317": {
+      "file": "317.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMxNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73526,
+      "teamName": "2R Racing",
+      "className": "SP 3T"
+    },
+    "320": {
+      "file": "320.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMyMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70816,
+      "teamName": "Four Motors Bioconcept-Car",
+      "className": "AT2"
+    },
+    "321": {
+      "file": "321.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzMyMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75346,
+      "teamName": "sharky-racing.com",
+      "className": "SP 3T"
+    },
+    "380": {
+      "file": "380.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73348,
+      "teamName": "BITTER",
+      "className": "SP 2T"
+    },
+    "396": {
+      "file": "396.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzM5Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70016,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "V6"
+    },
+    "410": {
+      "file": "410.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQxMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 84178,
+      "teamName": "rent2Drive-MEHRTEC-racing",
+      "className": "V6"
+    },
+    "415": {
+      "file": "415.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQxNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74556,
+      "teamName": "Köppen Motorsport",
+      "className": "V6"
+    },
+    "418": {
+      "file": "418.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQxOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 76410,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "V6"
+    },
+    "420": {
+      "file": "420.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQyMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69232,
+      "teamName": "Four Motors Bioconcept-Car",
+      "className": "SP 7"
+    },
+    "440": {
+      "file": "440.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ0MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 83430,
+      "teamName": "QTQ-Raceperformance",
+      "className": "V5"
+    },
+    "444": {
+      "file": "444.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ0NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72930,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "V5"
+    },
+    "445": {
+      "file": "445.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ0NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68572,
+      "teamName": "rent2Drive-MEHRTEC-racing",
+      "className": "V5"
+    },
+    "448": {
+      "file": "448.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ0OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70988,
+      "teamName": "OVERTAKERACING x tm-racing.org",
+      "className": "V6"
+    },
+    "454": {
+      "file": "454.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ1NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72578,
+      "teamName": "Pure Racing by Mohr Motorsportservice",
+      "className": "V5"
+    },
+    "455": {
+      "file": "455.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ1NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72816,
+      "teamName": "Pure Racing by Mohr Motorsportservice",
+      "className": "V5"
+    },
+    "471": {
+      "file": "471.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ3MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74428,
+      "teamName": "Jung Motorsport",
+      "className": "VT2 Front"
+    },
+    "472": {
+      "file": "472.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ3Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71746,
+      "teamName": "Jung Motorsport",
+      "className": "VT2 Front"
+    },
+    "474": {
+      "file": "474.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ3NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71324,
+      "teamName": "Time Attack Paderborn by GTÜ Wieseler",
+      "className": "VT2 Front"
+    },
+    "477": {
+      "file": "477.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 63908,
+      "teamName": "asBest Racing",
+      "className": "VT2 Front"
+    },
+    "480": {
+      "file": "480.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzQ4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75564,
+      "teamName": "Dupré Motorsport Engineering",
+      "className": "VT2 Front"
+    },
+    "500": {
+      "file": "500.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUwMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72284,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "VT2 Hecka"
+    },
+    "501": {
+      "file": "501.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUwMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68392,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "VT2 Hecka"
+    },
+    "503": {
+      "file": "503.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUwMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69794,
+      "teamName": "GITI TIRE MOTORSPORT BY WS RACING",
+      "className": "VT2 Hecka"
+    },
+    "505": {
+      "file": "505.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUwNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73700,
+      "teamName": "Keeevin Motorsport GmbH",
+      "className": "VT2 Hecka"
+    },
+    "514": {
+      "file": "514.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUxNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74770,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "VT2 Hecka"
+    },
+    "519": {
+      "file": "519.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUxOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71884,
+      "teamName": "RAVENOL Japan",
+      "className": "VT2 Hecka"
+    },
+    "520": {
+      "file": "520.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUyMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72232,
+      "teamName": "Toyo Tires with Ring Racing",
+      "className": "VT2 Hecka"
+    },
+    "524": {
+      "file": "524.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzUyNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70480,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "VT2 Hecka"
+    },
+    "569": {
+      "file": "569.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzU2OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74014,
+      "teamName": "NFR motorsports",
+      "className": "VT2 Hecka"
+    },
+    "577": {
+      "file": "577.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzU3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71758,
+      "teamName": "asBest Racing",
+      "className": "TCR"
+    },
+    "632": {
+      "file": "632.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzYzMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74800,
+      "teamName": "BLACK FALCON Team FANATEC",
+      "className": "AT2"
+    },
+    "650": {
+      "file": "650.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75790,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW M240i"
+    },
+    "651": {
+      "file": "651.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73904,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW M240i"
+    },
+    "652": {
+      "file": "652.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73156,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW M240i"
+    },
+    "653": {
+      "file": "653.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69976,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW M240i"
+    },
+    "658": {
+      "file": "658.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY1OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 62192,
+      "teamName": "JJ Motorsport",
+      "className": "BMW M240i"
+    },
+    "665": {
+      "file": "665.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY2NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73382,
+      "teamName": "GITI TIRE MOTORSPORT BY WS RACING",
+      "className": "BMW M240i"
+    },
+    "667": {
+      "file": "667.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY2Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 69586,
+      "teamName": "Breakell Racing",
+      "className": "BMW M240i"
+    },
+    "669": {
+      "file": "669.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY2OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 79522,
+      "teamName": "Keeevin Motorsport GmbH",
+      "className": "BMW M240i"
+    },
+    "670": {
+      "file": "670.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY3MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70016,
+      "teamName": "GITI TIRE MOTORSPORT BY WS RACING",
+      "className": "BMW M240i"
+    },
+    "677": {
+      "file": "677.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzY3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68076,
+      "teamName": "asBest Racing",
+      "className": "BMW M240i"
+    },
+    "776": {
+      "file": "776.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc3Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71444,
+      "teamName": "sharky-racing.com",
+      "className": "TCR"
+    },
+    "777": {
+      "file": "777.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75026,
+      "teamName": "RPM Racing",
+      "className": "Cup 2"
+    },
+    "786": {
+      "file": "786.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzc4Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 76202,
+      "teamName": "Renazzo Motorsport",
+      "className": "SP 9"
+    },
+    "800": {
+      "file": "800.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgwMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68292,
+      "teamName": "asBest Racing",
+      "className": "SP 3T"
+    },
+    "808": {
+      "file": "808.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgwOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70494,
+      "teamName": "asBest Racing",
+      "className": "SP 3T"
+    },
+    "821": {
+      "file": "821.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgyMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68090,
+      "teamName": "sharky-racing.com",
+      "className": "SP 3T"
+    },
+    "830": {
+      "file": "830.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzgzMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71064,
+      "teamName": "Hyundai Motorsport N",
+      "className": "TCR"
+    },
+    "870": {
+      "file": "870.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg3MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 71650,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "BMW"
+    },
+    "878": {
+      "file": "878.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg3OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74456,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "BMW"
+    },
+    "888": {
+      "file": "888.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg4OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 80358,
+      "teamName": "Hofor Racing by Bonk Motorsport",
+      "className": "SP 10"
+    },
+    "898": {
+      "file": "898.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg5OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68870,
+      "teamName": "Walkenhorst Motorsport",
+      "className": "BMW"
+    },
+    "899": {
+      "file": "899.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzg5OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70482,
+      "teamName": "W&S Motorsport",
+      "className": "BMW"
+    },
+    "900": {
+      "file": "900.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73138,
+      "teamName": "BLACK FALCON Team Zimmermann",
+      "className": "Cup 2"
+    },
+    "902": {
+      "file": "902.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75034,
+      "teamName": "Team LIQUI MOLY by BLACK FALCON",
+      "className": "Cup 2"
+    },
+    "904": {
+      "file": "904.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72230,
+      "teamName": "Mühlner Motorsport powered by H&R",
+      "className": "Cup 2"
+    },
+    "908": {
+      "file": "908.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 66760,
+      "teamName": "Hofor Racing",
+      "className": "Cup 2"
+    },
+    "909": {
+      "file": "909.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68388,
+      "teamName": "KKrämer Racing",
+      "className": "Cup 2"
+    },
+    "911": {
+      "file": "911.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkxMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 79718,
+      "teamName": "Manthey",
+      "className": "SP 9"
+    },
+    "918": {
+      "file": "918.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkxOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73752,
+      "teamName": "Mühlner Motorsport powered by H&R",
+      "className": "Cup 2"
+    },
+    "919": {
+      "file": "919.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkxOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74026,
+      "teamName": "Clickversicherung.de TEAM",
+      "className": "Cup 2"
+    },
+    "925": {
+      "file": "925.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkyNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72654,
+      "teamName": "Huber Motorsport",
+      "className": "Cup 2"
+    },
+    "939": {
+      "file": "939.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzkzOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73014,
+      "teamName": "BLACK FALCON Team Zimmermann",
+      "className": "Cup 3"
+    },
+    "941": {
+      "file": "941.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk0MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72538,
+      "teamName": "Adrenalin Motorsport Team Mainhattan Wheels",
+      "className": "Cup 3"
+    },
+    "945": {
+      "file": "945.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk0NS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73436,
+      "teamName": "Renazzo Motorsport",
+      "className": "Cup 3"
+    },
+    "949": {
+      "file": "949.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk0OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75272,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "Cup 3"
+    },
+    "952": {
+      "file": "952.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk1Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 74002,
+      "teamName": "Smyrlis Racing",
+      "className": "Cup 3"
+    },
+    "959": {
+      "file": "959.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk1OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 76034,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "Cup 3"
+    },
+    "961": {
+      "file": "961.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk2MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 73132,
+      "teamName": "W&S Motorsport",
+      "className": "Cup 3"
+    },
+    "962": {
+      "file": "962.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk2Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72274,
+      "teamName": "W&S Motorsport",
+      "className": "Cup 3"
+    },
+    "966": {
+      "file": "966.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk2Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 67260,
+      "teamName": "asBest Racing",
+      "className": "Cup 3"
+    },
+    "967": {
+      "file": "967.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk2Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70668,
+      "teamName": "Breakell Racing",
+      "className": "Cup 3"
+    },
+    "969": {
+      "file": "969.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk2OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 72874,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "Cup 3"
+    },
+    "971": {
+      "file": "971.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk3MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68292,
+      "teamName": "Speedworxx Automotive",
+      "className": "Cup 3"
+    },
+    "977": {
+      "file": "977.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70956,
+      "teamName": "BSL Racing Team",
+      "className": "Cup 3"
+    },
+    "978": {
+      "file": "978.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk3OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68102,
+      "teamName": "KKrämer Racing",
+      "className": "Cup 3"
+    },
+    "979": {
+      "file": "979.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk3OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 68450,
+      "teamName": "SRS Team Sorg Rennsport",
+      "className": "Cup 3"
+    },
+    "982": {
+      "file": "982.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk4Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75340,
+      "teamName": "W&S Motorsport",
+      "className": "Cup 3"
+    },
+    "992": {
+      "file": "992.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk5Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 75294,
+      "teamName": "Manthey Team eFuel Griesemann",
+      "className": "SP-PRO"
+    },
+    "999": {
+      "file": "999.webp",
+      "status": "downloaded",
+      "sourceField": "carshot_url",
+      "sourceUrl": "https://d2x6iy06jt61vi.cloudfront.net/eyJidWNrZXQiOiJldmVudGh1YmNsaWVudC1maWxlbWFuYWdlci12YXBvciIsImtleSI6Im1vdG9yc3BvcnRcL0FEQUNcLzIwMjZcLzI0aDIwMjZcLzI0aE5CUlwvY2Fyc2hvdHNcLzk5OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU4MCwiaGVpZ2h0IjozMjYsImZpdCI6ImNvdmVyIn19fQ==",
+      "contentType": "image/webp",
+      "bytes": 70754,
+      "teamName": "Mühlner Motorsport powered by H&R",
+      "className": "Cup 3"
+    }
+  },
+  "invalidEntries": [],
+  "failures": []
+}
