@@ -134,7 +134,7 @@ function App() {
       <header className="hero-panel">
         <div>
           <p className="eyebrow">ADAC RAVENOL 24h Nürburgring 2026</p>
-          <h1>Live Race Dash</h1>
+          <h1>Live Race Dashboard</h1>
           <p className="hero-copy">
             Race-control shell for local backend timing data, metadata, and circuit context.
           </p>
