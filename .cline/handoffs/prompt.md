@@ -18,16 +18,19 @@ Before doing any implementation, resume from the project handoff system and foll
   ```
 - Treat `prompt.md` as this reusable continuity prompt only, **not** as the main project handoff.
 - Important current context:
-  - The newest timestamped handoff may still be:
+  - The latest timestamped handoff after local car-image runtime integration is:
     ```text
-    .cline/handoffs/2026-05-18-154300-chunk-17b3-polish.md
+    .cline/handoffs/2026-05-19-223500-local-car-images-runtime.md
     ```
-  - However, the actual latest project work after that handoff is documented in:
+  - The one-time car-image archive script work immediately before that is documented in:
+    ```text
+    .cline/handoffs/2026-05-19-222100-car-image-archive-script.md
+    ```
+  - The offline playback work before the local image work is documented in:
     ```text
     .cline/handoffs/Added_offline_playback.md
     ```
-- If `Added_offline_playback.md` exists, read it after the latest timestamped handoff and treat it as the latest work note unless a newer timestamped handoff explicitly supersedes it.
-- If a newer timestamped handoff exists, read that newer handoff first, then only read older/chained handoffs if needed for deeper context.
+- Read the newest timestamped handoff first, then only read older/chained handoffs if needed for deeper context.
 - If handoffs disagree, prefer the most recent handoff/work note that matches the actual repository state after verification.
 
 ## 2. Use the session handoff workflow
@@ -49,7 +52,8 @@ The project goal has shifted slightly from “pure live-feed dashboard” to:
 - keep the same backend-first architecture;
 - support live WIGE timing when useful/available;
 - use recorded WIGE playback by default during development because the real race/live stream may no longer provide useful data after the event ended;
-- keep the frontend populated with realistic captured timing data while remaining truthful about the timing source.
+- keep the frontend populated with realistic captured timing data while remaining truthful about the timing source;
+- avoid normal-runtime external image requests by serving archived local car images from the backend.
 
 The dashboard should feel like a product/race-control interface for following a long endurance race, not a marketing page and not a generic long webpage.
 
@@ -60,6 +64,7 @@ The agreed architecture remains backend-first:
 ```text
 WIGE timing source -> local backend -> frontend dashboard
 Eventhub metadata snapshot -> local backend -> frontend dashboard
+Archived local car images -> local backend -> frontend dashboard
 ```
 
 Current WIGE timing source modes:
@@ -78,6 +83,7 @@ Important rules:
   backend/data/bootstrap
   ```
 - Use Eventhub metadata for car/team/class/driver metadata and car images.
+- Carshot images have been archived locally from Eventhub `carshot_url` values and should be served from the backend, not loaded from CloudFront during normal dashboard use.
 - Do not overpromise live car GPS. No reliable public race-car GPS was found. Any future track position must be estimated and clearly labeled.
 - The circuit map is a static track reference only; it must not imply live car location.
 
@@ -102,6 +108,7 @@ GET /health
 GET /api/metadata
 GET /api/state
 GET /api/status
+GET /assets/cars/<carNumber>.webp
 ```
 
 Key backend files:
@@ -109,6 +116,7 @@ Key backend files:
 ```text
 backend/src/config.ts
 backend/src/eventhubMetadata.ts
+backend/src/localAssets.ts
 backend/src/normalizers.ts
 backend/src/playbackClient.ts
 backend/src/raceState.ts
@@ -122,6 +130,7 @@ Implemented backend capabilities:
 
 - Express backend with `/health`.
 - Eventhub metadata snapshot loading and normalization from `backend/data/bootstrap`.
+- Local car image serving from `backend/data/car-images` under `/assets/cars`.
 - In-memory race state and `GET /api/state`.
 - WIGE normalizers for captured PID `0`, `3`, `4`, and `9002` messages.
 - Live WIGE websocket client for `wss://livetiming.azurewebsites.net`, event `50`, PIDs `[0, 4, 3, 9002]`, with polite reconnect behavior.
@@ -211,6 +220,65 @@ first car: #80, position 1, SP 9, lap 156, Winward Racing
 
 This means the frontend can receive populated race data through the existing `/api/state` endpoint without design/backend endpoint changes.
 
+### Current local car image behavior
+
+The project now archives and serves carshot images locally so normal dashboard runtime does not depend on CloudFront image availability.
+
+Archived image folder:
+
+```text
+backend/data/car-images
+```
+
+Current archive contents:
+
+```text
+161 .webp car images
+manifest.json
+```
+
+The one-time archive script is intentionally kept for documentation/reproducibility:
+
+```text
+image_download_script/download-car-images.mjs
+```
+
+Important image-source decision:
+
+- Use Eventhub `carshot_url`, **not** `carshot_url_full`.
+- `carshot_url_full` returned CloudFront `AccessDenied` XML during testing.
+- `carshot_url` returned valid images; tested responses were `image/webp`.
+
+Runtime integration:
+
+- `backend/src/localAssets.ts` assumes archived carshots are named:
+  ```text
+  <carNumber>.webp
+  ```
+- `backend/src/eventhubMetadata.ts` normalizes both image fields to local URLs when files exist:
+  ```text
+  /assets/cars/<carNumber>.webp
+  ```
+- Missing local images should produce `null` image fields rather than falling back to external URLs.
+- `backend/src/server.ts` serves `backend/data/car-images` at:
+  ```text
+  /assets/cars
+  ```
+
+Known runtime smoke test after local image integration:
+
+```json
+{
+  "timingSource": "playback",
+  "metadataWithImages": 161,
+  "carCount": 159,
+  "firstCar": "80",
+  "firstCarImage": "/assets/cars/80.webp",
+  "assetStatus": 200,
+  "assetContentType": "image/webp"
+}
+```
+
 ## 7. Current frontend state
 
 The frontend is a React + TypeScript + Vite dashboard that polls local backend state/status every `5000ms`.
@@ -262,6 +330,19 @@ Current Feed Status behavior:
   ```
 - The WIGE header pill was intentionally left unchanged; the `Source` field is the truthful clarification.
 
+Current selected-car image behavior:
+
+- Metadata carshot fields now contain backend-relative local paths such as:
+  ```text
+  /assets/cars/80.webp
+  ```
+- `frontend/src/api/client.ts` exports `API_BASE_URL`.
+- `frontend/src/dashboard/carHelpers.ts` resolves backend-relative image paths against `API_BASE_URL`, so Vite dev loads images from:
+  ```text
+  http://localhost:3001/assets/cars/<carNumber>.webp
+  ```
+- Browser/network QA should confirm selected-car images come from localhost backend assets, not CloudFront.
+
 Frontend design direction:
 
 - Dark race-control scene: a race viewer watches a long endurance race on a large monitor in a dim room.
@@ -310,6 +391,16 @@ Keep attribution visible, such as:
 Track outline © Pitlane02 / Wikimedia Commons / CC BY-SA 3.0
 ```
 
+Local car image archive:
+
+```text
+backend/data/car-images/*.webp
+backend/data/car-images/manifest.json
+image_download_script/download-car-images.mjs
+```
+
+The manifest is useful provenance and should generally be kept with the images. It maps car numbers to archived files and original `carshot_url` sources and records content type/byte-size metadata.
+
 ## 9. Verify current repository state before editing
 
 Before implementation:
@@ -343,6 +434,12 @@ Verification commands:
   npm run lint
   ```
 
+- To verify local car image archive count:
+  ```powershell
+  (Get-ChildItem backend/data/car-images -File | Where-Object { $_.Name -ne "manifest.json" }).Count
+  ```
+  Expected currently: `161`.
+
 For browser QA with populated data, default backend start now uses playback:
 
 ```powershell
@@ -369,6 +466,10 @@ npm start
 - `TimingCar.metadata` is populated when a matching Eventhub car number exists; `/api/status.raceState.carsWithoutMetadata` reveals misses.
 - `GET /api/status.timingSource` distinguishes `playback` from `live`.
 - Playback diagnostics are available under `/api/status.playback`.
+- Car images should load locally from `/assets/cars/<carNumber>.webp`; avoid reintroducing CloudFront image URLs into frontend runtime.
+- `headshotUrls` may still contain external URLs from metadata, but driver headshots are not currently used in the selected-car display. If used later, archive them locally first.
+- `image_download_script/download-car-images.mjs` is a one-time/provenance script, not part of normal app startup.
+- `backend/data/car-images/manifest.json` should usually stay with the images as provenance.
 - For small CSS polish work, prefer targeted selector searches/snippet reads over rereading or rewriting the entire large `frontend/src/App.css` file.
 - Do not broadly restructure the dashboard unless explicitly requested.
 - `frontend/src/components/TrackMap.tsx` may have line-ending warnings (`LF will be replaced by CRLF`) when Git touches it.
@@ -393,7 +494,7 @@ Please begin by reading the latest handoff/work note and summarizing your unders
 
 - current project goal;
 - current architecture and source-mode rules;
-- completed work, especially playback-default behavior;
+- completed work, especially playback-default behavior and local car image serving;
 - exact next step from the user’s current request;
 - any risks or assumptions that need verification.
 
