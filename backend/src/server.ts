@@ -7,6 +7,7 @@ import {
   getMetadataSummary,
   loadEventhubMetadata,
 } from "./eventhubMetadata.js";
+import { getPlaybackClientStatus, loadWigePlayback } from "./playbackClient.js";
 import { getRaceState, getRaceStateSummary } from "./raceState.js";
 import { getWigeClientStatus, startWigeClient, stopWigeClient } from "./wigeClient.js";
 
@@ -41,11 +42,27 @@ app.get("/api/status", (_req, res) => {
     service: "live-race-dash-backend",
     eventId: config.eventId,
     timestamp: new Date().toISOString(),
+    timingSource: config.wigeSource,
     metadata: getMetadataSummary(),
+    playback: getPlaybackClientStatus(),
     wige: getWigeClientStatus(),
     raceState: getRaceStateSummary(),
   });
 });
+
+async function startTimingSource(): Promise<void> {
+  if (config.wigeSource === "playback") {
+    console.log(`Loading WIGE playback from ${config.playbackPacketsPath}`);
+
+    const playbackStatus = await loadWigePlayback();
+    console.log(
+      `WIGE playback loaded: ${playbackStatus.appliedCount}/${playbackStatus.packetCount} packets applied`,
+    );
+    return;
+  }
+
+  startWigeClient();
+}
 
 const server = app.listen(config.port, () => {
   console.log(`Live Race Dash backend listening on http://localhost:${config.port}`);
@@ -65,7 +82,10 @@ const server = app.listen(config.port, () => {
       console.error("Unexpected metadata loader failure", metadataError);
     });
 
-  startWigeClient();
+  void startTimingSource()
+    .catch((timingSourceError: unknown) => {
+      console.error("Timing source startup failed", timingSourceError);
+    });
 });
 
 function shutdown(signal: NodeJS.Signals): void {

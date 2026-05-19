@@ -102,7 +102,8 @@ function getPid(parsedMessage: unknown): string | null {
     return null;
   }
 
-  const pid = (parsedMessage as Record<string, unknown>).P;
+  const record = parsedMessage as Record<string, unknown>;
+  const pid = record.PID ?? record.P;
 
   if (typeof pid === "string" || typeof pid === "number") {
     return String(pid);
