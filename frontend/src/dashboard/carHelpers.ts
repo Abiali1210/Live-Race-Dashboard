@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../api/client";
 import type { TimingCar } from "../api/types";
 
 export function getCarTeamName(car: TimingCar): string {
@@ -34,5 +35,15 @@ export function getCarDrivers(car: TimingCar): string[] {
 }
 
 export function getCarImageUrl(car: TimingCar): string | null {
-  return car.metadata?.carshotUrlFull ?? car.metadata?.carshotUrl ?? null;
+  const imageUrl = car.metadata?.carshotUrlFull ?? car.metadata?.carshotUrl ?? null;
+
+  if (imageUrl === null) {
+    return null;
+  }
+
+  if (imageUrl.startsWith("/")) {
+    return `${API_BASE_URL}${imageUrl}`;
+  }
+
+  return imageUrl;
 }
