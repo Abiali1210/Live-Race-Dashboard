@@ -1,0 +1,53 @@
+# Dependency / build output
+node_modules/
+dist/
+build/
+coverage/
+.out/
+.cache/
+.tmp/
+
+# Vite / frontend artifacts
+frontend/dist/
+frontend/.vite/
+
+# Backend / runtime data
+backend/data/car-images/
+backend/playback/
+
+# Exploration archive and captured bundles
+exploration-archive/captures/
+exploration-archive/**/*.bundle.js
+exploration-archive/**/*.min.js
+exploration-archive/**/*.map
+
+# Historical / analysis artifacts that are not source of truth
+.cline/
+.clinerules/
+skills-lock.json
+
+# Handoffs, prompts, and operational notes
+.cline/handoffs/
+.cline/skills/
+**/prompt*.md
+
+# Common generated or local env files
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# If you want to keep docs that actually matter, do NOT ignore:
+!README.md
+!Live Data Sources 24h Nürburgring Track Map.md
