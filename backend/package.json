@@ -5,6 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "export:static-demo": "tsx src/exportStaticDemo.ts",
     "record:playback": "tsx src/recordWigePlayback.ts",
     "start": "tsx src/server.ts",
     "typecheck": "tsc --noEmit"

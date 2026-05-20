@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../api/client";
+import { resolveAssetUrl } from "../api/client";
 import type { TimingCar } from "../api/types";
 
 export function getCarTeamName(car: TimingCar): string {
@@ -41,9 +41,5 @@ export function getCarImageUrl(car: TimingCar): string | null {
     return null;
   }
 
-  if (imageUrl.startsWith("/")) {
-    return `${API_BASE_URL}${imageUrl}`;
-  }
-
-  return imageUrl;
+  return resolveAssetUrl(imageUrl);
 }
