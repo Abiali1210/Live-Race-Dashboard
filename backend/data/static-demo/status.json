@@ -1,0 +1,76 @@
+{
+  "ok": true,
+  "service": "live-race-dash-backend",
+  "eventId": 50,
+  "timestamp": "2026-05-20T17:58:27.030Z",
+  "timingSource": "playback",
+  "metadata": {
+    "count": 161,
+    "withImages": 161,
+    "loadedAt": "2026-05-20T17:58:25.704Z",
+    "error": null
+  },
+  "playback": {
+    "path": "C:\\Users\\abiali\\Documents\\Academic\\Projects\\Live Race Dash\\backend\\playback\\2026-05-17T13-11-43-056Z\\packets.ndjson",
+    "loaded": true,
+    "loading": false,
+    "packetCount": 157,
+    "appliedCount": 157,
+    "skippedCount": 0,
+    "malformedCount": 0,
+    "firstPacketAt": "2026-05-17T13:11:44.007Z",
+    "lastPacketAt": "2026-05-17T13:15:41.541Z",
+    "lastLoadedAt": "2026-05-20T17:58:26.749Z",
+    "lastError": null,
+    "messageCountByPid": {
+      "0": 147,
+      "3": 1,
+      "4": 1,
+      "9002": 7,
+      "LTS_TIMESYNC": 1
+    }
+  },
+  "wige": {
+    "url": "wss://livetiming.azurewebsites.net",
+    "subscribedPids": [
+      0,
+      4,
+      3,
+      9002
+    ],
+    "reconnectDelayMs": 5000,
+    "lastConnectAt": null,
+    "lastSubscribeAt": null,
+    "lastDisconnectAt": null,
+    "lastCloseCode": null,
+    "lastCloseReason": null,
+    "lastError": null,
+    "connectAttemptCount": 0,
+    "reconnectCount": 0,
+    "messageCount": 0,
+    "lastMessageAt": null,
+    "lastMessagePid": null,
+    "messageCountByPid": {},
+    "malformedMessageCount": 0,
+    "connected": false,
+    "shouldReconnect": false,
+    "reconnectScheduled": false
+  },
+  "raceState": {
+    "connected": true,
+    "lastUpdate": "2026-05-20T17:58:26.745Z",
+    "carCount": 159,
+    "carsWithMetadata": 159,
+    "carsWithoutMetadata": 0,
+    "messageCount": 704,
+    "hasTrackState": true,
+    "hasStats": true,
+    "counters": {
+      "pid0": 147,
+      "pid3": 1,
+      "pid4": 1,
+      "pid9002": 7,
+      "other": 1
+    }
+  }
+}
