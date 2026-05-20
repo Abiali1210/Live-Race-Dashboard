@@ -1,12 +1,12 @@
 # Graph Report - C:\Users\abiali\Documents\Academic\Projects\Live Race Dash  (2026-05-20)
 
 ## Corpus Check
-- 42 files · ~21,178 words
+- 43 files · ~439,556 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 182 nodes · 279 edges · 30 communities detected
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 27 edges (avg confidence: 0.8)
+- 191 nodes · 309 edges · 30 communities detected
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 35 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -42,74 +42,74 @@
 - [[_COMMUNITY_Community 29|Community 29]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `loadWigePlayback()` - 10 edges
-2. `normalizeTimingRow()` - 8 edges
-3. `normalizeEntrylistItem()` - 7 edges
-4. `normalizeWigeMessage()` - 7 edges
-5. `applyNormalizedWigeMessage()` - 7 edges
-6. `main()` - 7 edges
-7. `loadEventhubMetadata()` - 6 edges
-8. `getSelectionLabel()` - 6 edges
-9. `getLeaderboardSearchText()` - 6 edges
-10. `getTimingRowString()` - 5 edges
+1. `main()` - 12 edges
+2. `loadWigePlayback()` - 11 edges
+3. `normalizeTimingRow()` - 8 edges
+4. `normalizeEntrylistItem()` - 7 edges
+5. `loadEventhubMetadata()` - 7 edges
+6. `normalizeWigeMessage()` - 7 edges
+7. `applyNormalizedWigeMessage()` - 7 edges
+8. `main()` - 7 edges
+9. `getSelectionLabel()` - 6 edges
+10. `getLeaderboardSearchText()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `loadWigePlayback()` --calls--> `normalizeWigeMessage()`  [INFERRED]
-  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\playbackClient.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\normalizers.ts
-- `loadWigePlayback()` --calls--> `applyNormalizedWigeMessage()`  [INFERRED]
-  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\playbackClient.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\raceState.ts
-- `loadWigePlayback()` --calls--> `setRaceConnectionStatus()`  [INFERRED]
-  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\playbackClient.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\raceState.ts
-- `stopWigeClient()` --calls--> `setRaceConnectionStatus()`  [INFERRED]
-  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\wigeClient.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\raceState.ts
-- `countMalformedMessage()` --calls--> `applyNormalizedWigeMessage()`  [INFERRED]
-  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\wigeClient.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\raceState.ts
+- `getSelectionLabel()` --calls--> `formatOptional()`  [INFERRED]
+  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\frontend\src\components\dashboard\LeaderboardTable.tsx → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\frontend\src\dashboard\formatters.ts
+- `main()` --calls--> `loadEventhubMetadata()`  [INFERRED]
+  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\exportStaticDemo.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\eventhubMetadata.ts
+- `main()` --calls--> `getMetadataSummary()`  [INFERRED]
+  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\exportStaticDemo.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\eventhubMetadata.ts
+- `main()` --calls--> `getWigeClientStatus()`  [INFERRED]
+  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\exportStaticDemo.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\wigeClient.ts
+- `main()` --calls--> `getRaceStateSummary()`  [INFERRED]
+  C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\exportStaticDemo.ts → C:\Users\abiali\Documents\Academic\Projects\Live Race Dash\backend\src\raceState.ts
 
 ## Communities
 
 ### Community 0 - "Community 0"
+Cohesion: 0.19
+Nodes (16): copyCarImages(), isMissingFileError(), loadFallbackDemoData(), main(), readJsonFile(), writeJsonFile(), getPlaybackClientStatus(), getStringOrNull() (+8 more)
+
+### Community 1 - "Community 1"
 Cohesion: 0.26
 Nodes (17): getArray(), getNumberOrNull(), getStringOrNull(), getTimingRowNumber(), getTimingRowString(), isRecord(), normalizeGapToLeader(), normalizePitStatus() (+9 more)
 
-### Community 1 - "Community 1"
-Cohesion: 0.18
-Nodes (11): getCarClassName(), getCarDriverName(), getCarDrivers(), getCarModel(), getCarTeamName(), formatEpochLikeValue(), formatOptional(), formatTrackStateCode() (+3 more)
-
 ### Community 2 - "Community 2"
+Cohesion: 0.17
+Nodes (10): shutdown(), startTimingSource(), clearReconnectTimer(), connect(), countMalformedMessage(), isRecord(), parseWigeMessage(), rawDataToString() (+2 more)
+
+### Community 3 - "Community 3"
+Cohesion: 0.18
+Nodes (10): getCarClassName(), getCarDriverName(), getCarDrivers(), getCarImageUrl(), getCarModel(), getCarTeamName(), compareLapTime(), compareNullableStrings() (+2 more)
+
+### Community 4 - "Community 4"
 Cohesion: 0.26
 Nodes (14): countCarsWithImages(), getArray(), getErrorMessage(), getMetadataSummary(), getStringOrNull(), isRecord(), loadEventhubMetadata(), normalizeDriverNames() (+6 more)
 
-### Community 3 - "Community 3"
-Cohesion: 0.19
-Nodes (9): shutdown(), clearReconnectTimer(), connect(), countMalformedMessage(), isRecord(), parseWigeMessage(), rawDataToString(), startWigeClient() (+1 more)
-
-### Community 4 - "Community 4"
-Cohesion: 0.25
-Nodes (9): getPlaybackClientStatus(), getStringOrNull(), getWigeMessage(), isRecord(), loadWigePlayback(), parseRecordedPacket(), recordAppliedMessage(), recordPacketTimestamps() (+1 more)
-
 ### Community 5 - "Community 5"
-Cohesion: 0.29
-Nodes (12): downloadImage(), extensionFromContentType(), fileExists(), findExistingImage(), getStringOrNull(), isRecord(), loadBootstrapEntrylist(), main() (+4 more)
+Cohesion: 0.24
+Nodes (8): loadDashboardData(), fetchJson(), fetchRaceState(), fetchStatus(), joinUrl(), resolveAssetUrl(), fetch(), main()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.29
-Nodes (10): getMetadataByCarNumber(), applyNormalizedWigeMessage(), attachMetadataToTimingCars(), createInitialCounters(), createInitialRaceState(), getRaceState(), incrementCounter(), markUpdated() (+2 more)
+Nodes (12): downloadImage(), extensionFromContentType(), fileExists(), findExistingImage(), getStringOrNull(), isRecord(), loadBootstrapEntrylist(), main() (+4 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.24
-Nodes (7): write(), main(), safe_print(), main(), safe_print(), main(), safe_print()
+Cohesion: 0.33
+Nodes (10): getMetadataByCarNumber(), applyNormalizedWigeMessage(), attachMetadataToTimingCars(), createInitialCounters(), createInitialRaceState(), getRaceState(), incrementCounter(), markUpdated() (+2 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.25
-Nodes (6): loadDashboardData(), fetchJson(), fetchRaceState(), fetchStatus(), fetch(), main()
+Cohesion: 0.24
+Nodes (7): write(), main(), safe_print(), main(), safe_print(), main(), safe_print()
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
 Nodes (2): stopRecorder(), writeManifest()
 
 ### Community 10 - "Community 10"
-Cohesion: 0.33
-Nodes (2): compareLapTime(), compareNullableStrings()
+Cohesion: 0.38
+Nodes (4): formatEpochLikeValue(), formatOptional(), formatTrackStateCode(), formatTrackStateSummary()
 
 ### Community 11 - "Community 11"
 Cohesion: 0.9
@@ -216,11 +216,13 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `fetch()` connect `Community 8` to `Community 5`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `downloadImage()` connect `Community 5` to `Community 8`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Are the 4 inferred relationships involving `loadWigePlayback()` (e.g. with `normalizeWigeMessage()` and `applyNormalizedWigeMessage()`) actually correct?**
-  _`loadWigePlayback()` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `applyNormalizedWigeMessage()` (e.g. with `loadWigePlayback()` and `countMalformedMessage()`) actually correct?**
-  _`applyNormalizedWigeMessage()` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `resolveAssetUrl()` connect `Community 5` to `Community 3`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `getCarImageUrl()` connect `Community 3` to `Community 5`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `fetch()` connect `Community 5` to `Community 6`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Are the 7 inferred relationships involving `main()` (e.g. with `loadEventhubMetadata()` and `getPlaybackClientStatus()`) actually correct?**
+  _`main()` has 7 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 5 inferred relationships involving `loadWigePlayback()` (e.g. with `main()` and `normalizeWigeMessage()`) actually correct?**
+  _`loadWigePlayback()` has 5 INFERRED edges - model-reasoned connections that need verification._
